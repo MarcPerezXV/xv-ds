@@ -131,7 +131,7 @@ export const BaseSelect = ({
 
     {error && (
       <div className="xv-select__error">
-        <Icon name="close" size="small" />
+        <Icon name="xMarkSquare" size="small" />
         {error}
       </div>
     )}

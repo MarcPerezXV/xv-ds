@@ -139,7 +139,7 @@ export const RangeInput = ({
 
       {error && (
         <div id={errorId} className="xv-range-input__error">
-          <Icon name="close" size="small" />
+          <Icon name="xMarkSquare" size="small" />
           {error}
         </div>
       )}

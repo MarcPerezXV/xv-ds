@@ -124,7 +124,7 @@ export const BaseDatePicker = ({
 
       {error && (
         <div id={errorId} className="xv-date-picker__error">
-          <Icon name="close" size="small" />
+          <Icon name="xMarkSquare" size="small" />
           {error}
         </div>
       )}

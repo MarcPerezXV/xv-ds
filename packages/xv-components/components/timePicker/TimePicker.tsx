@@ -174,7 +174,7 @@ export const TimePicker = ({
 
       {error && (
         <div id={errorId} className="xv-time-picker__error">
-          <Icon name="close" size="small" />
+          <Icon name="xMarkSquare" size="small" />
           {error}
         </div>
       )}
