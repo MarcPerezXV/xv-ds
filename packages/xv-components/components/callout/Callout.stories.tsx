@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Callout } from "./Callout";
-import { PrimaryTextButton } from "../textButton/primary/Button";
 import { GhostTextButton } from "../textButton";
 import { Icon } from "../icon";
 
@@ -20,7 +19,7 @@ const meta: Meta<typeof Callout> = {
       control: "text",
       description: "Callout message.",
     },
-    trailingSlot: { table: { disable: true } },
+    children: { table: { disable: true } },
     className: { table: { disable: true } },
   },
 };
@@ -35,14 +34,17 @@ export const Default: Story = {
   },
 };
 
-export const WithAction: Story = {
+export const WithActions: Story = {
+  render: (args) => (
+    <Callout {...args}>
+      <Callout.Actions>
+        <GhostTextButton label="Action 01" leadingSlot={<Icon name="clock" size="small" />} />
+        <GhostTextButton label="Action 02" leadingSlot={<Icon name="clock" size="small" />} />
+      </Callout.Actions>
+    </Callout>
+  ),
   args: {
     type: "informative",
     message: "Callout message will be displayed here",
-    trailingSlot: 
-    <>
-    <GhostTextButton label="Action 01" leadingSlot={<Icon name="clock" size="small"/>} />
-    <GhostTextButton label="Action 02" leadingSlot={<Icon name="clock" size="small"/>} />
-    </>
   },
 };

@@ -61,3 +61,10 @@
     color: var(--color__text__danger);
   }
 }
+
+.xv-callout__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--gap__01);
+  flex-shrink: 0;
+}

@@ -8,28 +8,35 @@ export type CalloutType = "warning" | "error" | "informative";
 export interface CalloutProps {
   type?: CalloutType;
   message: string;
-  trailingSlot?: ReactNode;
+  children?: ReactNode;
   className?: string;
 }
 
 const iconMap: Record<CalloutType, IconName> = {
-  warning: "warning",
-  error: "xMarkSquare",
-  informative: "infoSquare",
+  warning: "clock",
+  error: "clock",
+  informative: "clock",
 };
 
-export const Callout = ({ type = "informative", message, trailingSlot, className }: CalloutProps) => {
+const CalloutActions = ({ children }: { children: ReactNode }) => (
+  <div className="xv-callout__actions">{children}</div>
+);
+
+CalloutActions.displayName = "CalloutActions";
+
+const Callout = ({ type = "informative", message, children, className }: CalloutProps) => {
   return (
     <div className={clsx("xv-callout", `xv-callout--${type}`, className)}>
-        <div className="xv-callout__info">
-      <Icon name={iconMap[type]} size="medium" className="xv-callout__icon" />
-      <span className="xv-callout__message">{message}</span>
+      <div className="xv-callout__info">
+        <Icon name={iconMap[type]} size="medium" className="xv-callout__icon" />
+        <span className="xv-callout__message">{message}</span>
       </div>
-      {trailingSlot && (
-        <div className="xv-callout__trailing">{trailingSlot}</div>
-      )}
+      {children}
     </div>
   );
 };
 
 Callout.displayName = "Callout";
+Callout.Actions = CalloutActions;
+
+export { Callout };
