@@ -1,24 +1,27 @@
 import type { Preview, Decorator } from '@storybook/react-vite'
-import { DSProvider } from '@xv/components'
+import { DSProvider, DSTheme } from '@xv/components'
 import "@xv/styles";
 import { useEffect } from "react";
 
-const withTheme: Decorator = (Story, context) => {
+const withBackground: Decorator = (Story, context) => {
   const theme = context.globals.theme ?? "dark";
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
     document.body.style.background = theme === "dark" ? "#444e54" : "#ffffff";
   }, [theme]);
 
   return <Story />;
 };
 
-const withDSProvider: Decorator = (Story) => (
-  <DSProvider>
-    <Story />
-  </DSProvider>
-);
+const withDSProvider: Decorator = (Story, context) => {
+  const theme = (context.globals.theme ?? "dark") as DSTheme;
+
+  return (
+    <DSProvider theme={theme}>
+      <Story />
+    </DSProvider>
+  );
+};
 
 const preview: Preview = {
   globalTypes: {
@@ -31,7 +34,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [withDSProvider, withTheme],
+  decorators: [withDSProvider, withBackground],
   parameters: {
     controls: {
       matchers: {

@@ -22,3 +22,11 @@ body {
     text-rendering: optimizeLegibility;
 
 }
+
+body,
+body * {
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
