@@ -1,10 +1,9 @@
 import { format } from "date-fns";
 import { DayPicker, DateRange } from "react-day-picker";
-import { useState } from "react";
 import { BaseDatePicker } from "./_base/Base";
+import { usePopover } from "../../hooks/use.popover";
 
-
-import "./range-date-picker.css"
+import "./range-date-picker.css";
 import clsx from "clsx";
 import { Icon } from "../icon";
 
@@ -42,7 +41,7 @@ export const RangeDatePicker = ({
   weekStartsOn = 1,
   presets,
 }: RangeDatePickerProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, toggle, close, wrapperRef, refs, floatingStyles } = usePopover();
 
   const disabledDays = disableFuture ? { after: new Date() } : undefined;
 
@@ -55,17 +54,17 @@ export const RangeDatePicker = ({
   const handlePreset = (preset: DateRangePreset) => {
     const range = preset.getRange();
     onChange?.(range);
-    setIsOpen(false);
+    close();
   };
 
   const isPresetActive = (preset: DateRangePreset) => {
-  const presetRange = preset.getRange();
-  if (!value?.from || !value?.to || !presetRange.from || !presetRange.to) return false;
-  return (
-    value.from.toDateString() === presetRange.from.toDateString() &&
-    value.to.toDateString() === presetRange.to.toDateString()
-  );
-};
+    const presetRange = preset.getRange();
+    if (!value?.from || !value?.to || !presetRange.from || !presetRange.to) return false;
+    return (
+      value.from.toDateString() === presetRange.from.toDateString() &&
+      value.to.toDateString() === presetRange.to.toDateString()
+    );
+  };
 
   return (
     <BaseDatePicker
@@ -76,15 +75,16 @@ export const RangeDatePicker = ({
       disabled={disabled}
       className={className}
       isOpen={isOpen}
-      
-      onToggle={() => setIsOpen((prev) => !prev)}
-      onClose={() => setIsOpen(false)}
-      hasValue={!!value?.from}
-      valueLabel={valueLabel}
+      onToggle={toggle}
       onClear={() => {
         onChange?.(undefined);
-        setIsOpen(false);
+        close();
       }}
+      hasValue={!!value?.from}
+      valueLabel={valueLabel}
+      wrapperRef={wrapperRef}
+      refs={refs}
+      floatingStyles={floatingStyles}
     >
       <div className="xv-date-picker__popover-inner">
         {presets && presets.length > 0 && (
@@ -92,15 +92,15 @@ export const RangeDatePicker = ({
             {presets.map((preset) => (
               <li key={preset.label}>
                 <button
-  type="button"
-  className={clsx(
-    "xv-date-picker__preset-button",
-    isPresetActive(preset) && "xv-date-picker__preset-button--active"
-  )}
-  onClick={() => handlePreset(preset)}
->
-  {preset.label}
-</button>
+                  type="button"
+                  className={clsx(
+                    "xv-date-picker__preset-button",
+                    isPresetActive(preset) && "xv-date-picker__preset-button--active"
+                  )}
+                  onClick={() => handlePreset(preset)}
+                >
+                  {preset.label}
+                </button>
               </li>
             ))}
           </ul>
@@ -116,7 +116,7 @@ export const RangeDatePicker = ({
           onSelect={(range) => {
             onChange?.(range);
             if (range?.from && range?.to && range.to > range.from) {
-              setIsOpen(false);
+              close();
             }
           }}
           components={{

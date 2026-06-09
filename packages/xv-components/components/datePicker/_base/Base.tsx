@@ -1,6 +1,7 @@
-import { useRef, useEffect, ReactNode } from "react";
+import { ReactNode } from "react";
 import { clsx } from "clsx";
 import { useDSLocale } from "../../../provider/DSContext";
+import { usePopover } from "../../../hooks/use.popover";
 
 import "./styles.css";
 import { GhostIconButton } from "../../iconButton";
@@ -15,10 +16,12 @@ export interface BaseDatePickerProps {
   className?: string;
   isOpen: boolean;
   onToggle: () => void;
-  onClose: () => void;
-  valueLabel: string;
-  hasValue: boolean;
   onClear: () => void;
+  hasValue: boolean;
+  valueLabel: string;
+  wrapperRef: React.RefObject<HTMLDivElement>;
+  refs: ReturnType<typeof usePopover>["refs"];
+  floatingStyles: React.CSSProperties;
   children: ReactNode;
 }
 
@@ -31,30 +34,15 @@ export const BaseDatePicker = ({
   className,
   isOpen,
   onToggle,
-  onClose,
-  valueLabel,
-  hasValue,
   onClear,
+  hasValue,
+  valueLabel,
+  wrapperRef,
+  refs,
+  floatingStyles,
   children,
 }: BaseDatePickerProps) => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
   const locale = useDSLocale();
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen, onClose]);
 
   const descriptionId = description ? "date-picker-description" : undefined;
   const errorId = error ? "date-picker-error" : undefined;
@@ -71,7 +59,7 @@ export const BaseDatePicker = ({
         )}
       </div>
 
-      <div className="xv-date-picker__control-wrapper">
+      <div className="xv-date-picker__control-wrapper" ref={refs.setReference}>
         <button
           type="button"
           disabled={disabled}
@@ -122,7 +110,15 @@ export const BaseDatePicker = ({
         </div>
       )}
 
-      {isOpen && <div className="xv-date-picker__popover">{children}</div>}
+      {isOpen && (
+        <div
+          ref={refs.setFloating}
+          style={floatingStyles}
+          className="xv-date-picker__popover"
+        >
+          {children}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
 import { clsx } from "clsx";
 import { GhostIconButton } from "../iconButton";
 import { useDSLocale } from "../../provider/DSContext";
+import { usePopover } from "../../hooks/use.popover";
 import { NumberInput } from "../input";
 
 import "./styles.css";
@@ -41,28 +41,13 @@ export const RangeInput = ({
   step = 1,
   mode = "both",
 }: RangeInputProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const { isOpen, toggle, close, wrapperRef, refs, floatingStyles } = usePopover({
+    matchReferenceWidth: true,
+  });
   const locale = useDSLocale();
 
   const from = value?.from ?? min;
   const to = value?.to ?? max;
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
 
   const handleFromChange = (v: number) => {
     const clamped = Math.min(v, to);
@@ -92,7 +77,7 @@ export const RangeInput = ({
         )}
       </div>
 
-      <div className="xv-range-input__control-wrapper">
+      <div className="xv-range-input__control-wrapper" ref={refs.setReference}>
         <button
           type="button"
           disabled={disabled}
@@ -104,7 +89,7 @@ export const RangeInput = ({
             isOpen && "xv-range-input__control--active",
             error && "xv-range-input__control--error",
           )}
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={toggle}
         >
           <span className="xv-range-input__value">
             {value ? `${from} - ${to}` : `${min} - ${max}`}
@@ -144,7 +129,11 @@ export const RangeInput = ({
       )}
 
       {isOpen && (
-        <div className="xv-range-input__popover">
+        <div
+          ref={refs.setFloating}
+          style={floatingStyles}
+          className="xv-range-input__popover"
+        >
           <div className="xv-range-input__slider-wrapper">
             <div
               className="xv-range-input__track-fill"

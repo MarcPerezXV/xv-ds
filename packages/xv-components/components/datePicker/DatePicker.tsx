@@ -1,4 +1,3 @@
-import { useState, useRef, useEffect } from "react";
 import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import { clsx } from "clsx";
@@ -6,6 +5,7 @@ import { clsx } from "clsx";
 import { GhostIconButton } from "../iconButton";
 import { ScrollColumn } from "../_shared/ScrollColumn";
 import { useDSLocale } from "../../provider/DSContext";
+import { usePopover } from "../../hooks/use.popover";
 
 import "react-day-picker/dist/style.css";
 import "./date-picker.css";
@@ -49,17 +49,13 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 const formatValue = (value: DatePickerValue, dateFormat: string, hour12: boolean, showTime: boolean) => {
   const datePart = format(value.date, dateFormat);
-
   if (!showTime || !value.time) return datePart;
-
   const { hours, minutes } = value.time;
-
   if (hour12) {
     const period = hours >= 12 ? "PM" : "AM";
     const h = hours % 12 || 12;
     return `${datePart}, ${pad(h)}:${pad(minutes)} ${period}`;
   }
-
   return `${datePart}, ${pad(hours)}:${pad(minutes)}`;
 };
 
@@ -80,8 +76,7 @@ export const DatePicker = ({
   weekStartsOn = 1,
   presets,
 }: DatePickerProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const { isOpen, toggle, close, wrapperRef, refs, floatingStyles } = usePopover();
   const locale = useDSLocale();
 
   const defaultPlaceholder = showTime ? "Select date and time" : "Select date";
@@ -91,27 +86,9 @@ export const DatePicker = ({
 
   const timeHours = value?.time?.hours ?? 0;
   const timeMinutes = value?.time?.minutes ?? 0;
-
   const disabledDays = disableFuture ? { after: new Date() } : undefined;
-
   const selectedHours = hour12 ? timeHours % 12 || 12 : timeHours;
   const period = timeHours >= 12 ? "PM" : "AM";
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
 
   const handleDaySelect = (date: Date | undefined) => {
     if (!date) return;
@@ -119,7 +96,7 @@ export const DatePicker = ({
       date,
       time: showTime ? (value?.time ?? { hours: 0, minutes: 0 }) : undefined,
     });
-    if (!showTime) setIsOpen(false);
+    if (!showTime) close();
   };
 
   const handleHourSelect = (h: number) => {
@@ -173,7 +150,7 @@ export const DatePicker = ({
         )}
       </div>
 
-      <div className="xv-date-picker__control-wrapper">
+      <div className="xv-date-picker__control-wrapper" ref={refs.setReference}>
         <button
           type="button"
           disabled={disabled}
@@ -185,7 +162,7 @@ export const DatePicker = ({
             isOpen && "xv-date-picker__control--active",
             error && "xv-date-picker__control--error",
           )}
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={toggle}
         >
           <span className={clsx(
             "xv-date-picker__value",
@@ -225,7 +202,11 @@ export const DatePicker = ({
       )}
 
       {isOpen && (
-        <div className="xv-date-picker__popover">
+        <div
+          ref={refs.setFloating}
+          style={floatingStyles}
+          className="xv-date-picker__popover"
+        >
           {presets && presets.length > 0 && (
             <ul className="xv-date-picker__presets">
               {presets.map((preset) => (
@@ -238,7 +219,7 @@ export const DatePicker = ({
                     )}
                     onClick={() => {
                       onChange?.(preset.value);
-                      setIsOpen(false);
+                      close();
                     }}
                   >
                     {preset.label}
@@ -272,15 +253,12 @@ export const DatePicker = ({
                   selected={selectedHours}
                   onSelect={handleHourSelect}
                 />
-
                 <div className="xv-date-picker__separator">:</div>
-
                 <ScrollColumn
                   items={minutes}
                   selected={timeMinutes}
                   onSelect={handleMinuteSelect}
                 />
-
                 {hour12 && (
                   <div className="xv-date-picker__period">
                     {(["AM", "PM"] as const).map((p) => (

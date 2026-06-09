@@ -115,9 +115,6 @@
 
 /* ── Popover ── */
 .xv-time-picker__popover {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
   width: max-content;
   display: flex;
   z-index: var(--xv__depth__full, 1000);

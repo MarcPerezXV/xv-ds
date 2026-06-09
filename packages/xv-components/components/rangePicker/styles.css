@@ -116,9 +116,7 @@
 
 /* ── Popover ── */
 .xv-range-input__popover {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
+  
   width: 100%;
   z-index: var(--xv__depth__full, 1000);
   background-color: var(--color__background-02);

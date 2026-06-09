@@ -1,7 +1,7 @@
-import { useRef, useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { GhostIconButton } from "../iconButton";
 import { useDSLocale } from "../../provider/DSContext";
+import { usePopover } from "../../hooks/use.popover";
 
 import "./styles.css";
 import { ScrollColumn } from "../_shared/ScrollColumn";
@@ -55,8 +55,7 @@ export const TimePicker = ({
   minuteStep = 1,
   presets,
 }: TimePickerProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const { isOpen, toggle, close, wrapperRef, refs, floatingStyles } = usePopover();
   const locale = useDSLocale();
 
   const hours = Array.from({ length: hour12 ? 12 : 24 }, (_, i) => hour12 ? i + 1 : i);
@@ -68,22 +67,6 @@ export const TimePicker = ({
 
   const formatHour = (h: number) => pad(h);
   const period = value ? (value.hours >= 12 ? "PM" : "AM") : "AM";
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
 
   const handleHourSelect = (h: number) => {
     const realHour = hour12
@@ -119,7 +102,7 @@ export const TimePicker = ({
         )}
       </div>
 
-      <div className="xv-time-picker__control-wrapper">
+      <div className="xv-time-picker__control-wrapper" ref={refs.setReference}>
         <button
           type="button"
           disabled={disabled}
@@ -131,7 +114,7 @@ export const TimePicker = ({
             isOpen && "xv-time-picker__control--active",
             error && "xv-time-picker__control--error",
           )}
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={toggle}
         >
           <span className={clsx(
             "xv-time-picker__value",
@@ -171,7 +154,11 @@ export const TimePicker = ({
       )}
 
       {isOpen && (
-        <div className="xv-time-picker__popover">
+        <div
+          ref={refs.setFloating}
+          style={floatingStyles}
+          className="xv-time-picker__popover"
+        >
           {presets && presets.length > 0 && (
             <ul className="xv-time-picker__presets">
               {presets.map((preset) => (
@@ -187,7 +174,7 @@ export const TimePicker = ({
                     )}
                     onClick={() => {
                       onChange?.(preset.value);
-                      setIsOpen(false);
+                      close();
                     }}
                   >
                     {preset.label}
