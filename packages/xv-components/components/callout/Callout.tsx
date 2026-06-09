@@ -13,9 +13,9 @@ export interface CalloutProps {
 }
 
 const iconMap: Record<CalloutType, IconName> = {
-  warning: "clock",
-  error: "clock",
-  informative: "clock",
+  warning: "warning",
+  error: "xMarkSquare",
+  informative: "infoSquare",
 };
 
 const CalloutActions = ({ children }: { children: ReactNode }) => (
