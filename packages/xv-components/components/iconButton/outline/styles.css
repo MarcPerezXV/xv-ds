@@ -1,0 +1,26 @@
+.xv-icon-button.xv-icon-button-outline {
+
+    background-color: transparent;
+    color: var(--color__text__base);
+    border: 1px solid var(--color__border__normal);
+
+    &:hover { 
+        background-color: var(--color__surface-layer-01);
+        border-color: var(--color__border__hover);
+    }
+
+    &:disabled {
+        background-color: transparent;
+        color: var(--color__text__brighter-02);
+        border-color: var(--color__border__disabled);
+    }
+
+    &.xv-icon-button-outline--active { 
+        background-color: var(--color__surface-layer-02); 
+        border-color: var(--color__border__active);
+    }
+
+    &.xv-icon-button-outline--active:hover { background-color: var(--color__surface-layer-03);}
+
+}
+

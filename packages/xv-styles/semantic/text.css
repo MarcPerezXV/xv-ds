@@ -1,0 +1,122 @@
+:root {
+    --text__header-01:
+        var(--font-weight__regular) var(--font-size__08) / var(--line-height__08) var(--font-family__primary);
+
+    --text__header-01__bold:
+        var(--font-weight__bold) var(--font-size__08) / var(--line-height__08) var(--font-family__primary);
+
+    --text__header-02:
+        var(--font-weight__regular) var(--font-size__07) / var(--line-height__07) var(--font-family__primary);
+
+    --text__header-02__bold:
+        var(--font-weight__bold) var(--font-size__07) / var(--line-height__07) var(--font-family__primary);
+
+    --text__header-03:
+        var(--font-weight__regular) var(--font-size__06) / var(--line-height__06) var(--font-family__primary);
+
+    --text__header-03__bold:
+        var(--font-weight__bold) var(--font-size__06) / var(--line-height__06) var(--font-family__primary);
+
+    --text__header-04:
+        var(--font-weight__regular) var(--font-size__05) / var(--line-height__05) var(--font-family__primary);
+
+    --text__header-04__bold:
+        var(--font-weight__bold) var(--font-size__05) / var(--line-height__05) var(--font-family__primary);
+
+    --text__header-05:
+        var(--font-weight__regular) var(--font-size__04) / var(--line-height__04) var(--font-family__primary);
+
+    --text__header-05__bold:
+        var(--font-weight__bold) var(--font-size__04) / var(--line-height__04) var(--font-family__primary);
+
+    --text__body-large:
+        var(--font-weight__regular) var(--font-size__03) / var(--line-height__03) var(--font-family__primary);
+
+    --text__body-large__italic:
+        italic var(--font-weight__regular) var(--font-size__03) / var(--line-height__03) var(--font-family__primary);
+
+    --text__body-large__bold:
+        var(--font-weight__bold) var(--font-size__03) / var(--line-height__03) var(--font-family__primary);
+
+    --text__body-large__bold-italic:
+        italic var(--font-weight__bold) var(--font-size__03) / var(--line-height__03) var(--font-family__primary);
+
+    --text__body-medium:
+        var(--font-weight__regular) var(--font-size__02) / var(--line-height__02) var(--font-family__primary);
+    
+    --text__body-medium__italic:
+       italic var(--font-weight__regular) var(--font-size__02) / var(--line-height__02) var(--font-family__primary);
+
+    --text__body-medium__bold:
+        var(--font-weight__bold) var(--font-size__02) / var(--line-height__02) var(--font-family__primary);
+    
+    --text__body-medium__bold-italic:
+        italic var(--font-weight__bold) var(--font-size__02) / var(--line-height__02) var(--font-family__primary);
+
+    --text__body-small:
+        var(--font-weight__regular) var(--font-size__01) / var(--line-height__01) var(--font-family__primary);
+
+    --text__body-small__italic:
+        italic var(--font-weight__regular) var(--font-size__01) / var(--line-height__01) var(--font-family__primary);
+
+    --text__body-small__bold:
+        var(--font-weight__bold) var(--font-size__01) / var(--line-height__01) var(--font-family__primary);
+    
+    --text__body-small__bold-italic:
+       italic var(--font-weight__bold) var(--font-size__01) / var(--line-height__01) var(--font-family__primary);
+
+        --color__text__base: light-dark(
+        var(--color__slate-100),
+        var(--color__white)
+    );
+    
+    --color__text__brighter-01: light-dark(
+        var(--color__gray-600),
+        var(--color__gray-300)
+    );
+
+    --color__text__brighter-02: light-dark(
+        var(--color__gray-500),
+        var(--color__gray-400)
+    );
+
+    --color__text__over-color: light-dark(
+        var(--color__white),
+        var(--color__white)
+    );
+
+    --color__text__danger: light-dark(
+        var(--color__red-300),
+        var(--color__red-100)
+    );
+
+    --color__text__informative: light-dark(
+        var(--color__blue-300),
+        var(--color__blue-100)
+    );
+
+    --color__text__base__inverted: light-dark(
+        var(--color__white),
+        var(--color__slate-100)
+    );
+
+    --color__text__brighter-01__inverted: light-dark(
+        var(--color__gray-300),
+        var(--color__gray-600)
+    );
+
+    --color__text__brighter-02__inverted: light-dark(
+        var(--color__gray-400),
+        var(--color__gray-500)
+    );
+
+    --color__text__danger__inverted: light-dark(
+        var(--color__red-100),
+        var(--color__red-300)
+    );
+
+    --color__text__informative__inverted: light-dark(
+        var(--color__blue-300),
+        var(--color__blue-100)
+    );
+}

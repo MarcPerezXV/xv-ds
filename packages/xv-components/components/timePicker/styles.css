@@ -1,0 +1,268 @@
+/* ── Layout ── */
+.xv-time-picker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap__01);
+  min-width: 132px;
+  width: clamp(8.25rem, 5.75rem + 12.5vw, 17rem);
+  max-width: 100%;
+  font: var(--text__body-large);
+}
+
+.xv-time-picker__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap__01);
+}
+
+.xv-time-picker__label {
+  color: var(--color__text__base);
+}
+
+.xv-time-picker__description {
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  margin: 0;
+}
+
+/* ── Control ── */
+.xv-time-picker__control-wrapper {
+  position: relative;
+}
+
+.xv-time-picker__control {
+  appearance: none;
+  outline: none;
+  border: 1px solid transparent;
+  width: 100%;
+  min-height: 32px;
+  border-radius: var(--border-radius__02);
+  background-color: var(--color__background-04);
+  font: var(--text__body-large);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: var(--spacing__03);
+  padding-right: 56px;
+  transition: background-color 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+
+  &:hover {
+    background-color: var(--color__background-05);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--effect__focus-ring);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--color__text__brighter-02);
+    background: var(--color__background-02);
+    border-color: var(--color__border__subtle);
+  }
+}
+
+.xv-time-picker__control--active {
+  border-color: var(--color__border__focus);
+}
+
+.xv-time-picker__control--error {
+  border-color: var(--color__status__danger);
+}
+
+.xv-time-picker__value {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: start;
+}
+
+.xv-time-picker__value--placeholder {
+  color: var(--color__text__brighter-02);
+}
+
+.xv-time-picker__clear-wrapper {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+}
+
+.xv-time-picker__clock-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color__text__brighter-02);
+}
+
+/* ── Error ── */
+.xv-time-picker__error {
+  font: var(--text__body-medium);
+  padding: var(--spacing__01);
+  color: var(--color__text__danger);
+  display: flex;
+  align-items: center;
+  gap: var(--gap__01);
+
+  & > svg {
+    color: var(--color__system-feedback__red-medium);
+  }
+}
+
+/* ── Popover ── */
+.xv-time-picker__popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: max-content;
+  display: flex;
+  z-index: var(--xv__depth__full, 1000);
+  background-color: var(--color__background-02);
+  border: 1px solid var(--color__border__subtle);
+  border-radius: var(--border-radius__02);
+  box-shadow: 0 1px 2px var(--color__shadow-01), 0 8px 16px var(--color__shadow-02);
+  overflow: hidden;
+}
+
+/* ── Presets ── */
+.xv-time-picker__presets {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap__01);
+  list-style: none;
+  margin: 0;
+  padding: var(--spacing__03);
+  font: var(--text__base-medium);
+  min-width: 140px;
+  border-right: 1px solid var(--color__border__subtle);
+}
+
+.xv-time-picker__preset-button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: var(--spacing__02) var(--spacing__03);
+  border-radius: var(--border-radius__02);
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+
+  &:hover {
+    background-color: var(--color__surface-layer-01);
+    color: var(--color__text__base);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--effect__focus-ring);
+  }
+}
+
+.xv-time-picker__preset-button--active {
+  background-color: var(--color__surface-layer-02);
+  color: var(--color__text__base);
+}
+
+/* ── Columns ── */
+.xv-time-picker__columns {
+  display: flex;
+  align-items: center;
+  gap: var(--gap__01);
+  padding: var(--spacing__03);
+}
+
+.xv-time-picker__column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 180px;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.xv-time-picker__column-item {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius__full);
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  cursor: pointer;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 150ms ease, color 150ms ease;
+
+  &:hover {
+    background-color: var(--color__surface-layer-01);
+    color: var(--color__text__base);
+  }
+}
+
+.xv-time-picker__column-item--selected {
+  background-color: var(--color__status__normal);
+  color: var(--color__text__over-color);
+  border-radius: var(--border-radius__full);
+
+  &:hover {
+    background-color: var(--color__status__hover);
+  }
+}
+
+.xv-time-picker__separator {
+  font: var(--text__body-large);
+  color: var(--color__text__brighter-01);
+  padding-bottom: 2px;
+}
+
+/* ── Period (AM/PM) ── */
+.xv-time-picker__period {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap__01);
+  margin-left: var(--gap__01);
+}
+
+.xv-time-picker__period-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: var(--spacing__02) var(--spacing__03);
+  border-radius: var(--border-radius__02);
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+
+  &:hover {
+    background-color: var(--color__surface-layer-01);
+    color: var(--color__text__base);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--effect__focus-ring);
+  }
+}
+
+.xv-time-picker__period-button--active {
+  background-color: var(--color__surface-layer-02);
+  color: var(--color__text__base);
+  font-weight: 500;
+}
+
+.xv-time-picker__column {
+  padding-block: calc(90px - 16px);
+}

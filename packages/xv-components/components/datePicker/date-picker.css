@@ -1,0 +1,71 @@
+@import "./_base/styles.css";
+
+.xv-date-picker__time {
+  border-left: 1px solid var(--color__border__subtle);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  padding: var(--spacing__03);
+}
+
+.xv-date-picker__columns {
+  display: flex;
+  align-items: center;
+  gap: var(--gap__01);
+  height: 100%;
+  
+}
+
+
+
+.xv-date-picker__separator {
+  font: var(--text__body-large);
+  color: var(--color__text__brighter-01);
+  padding-bottom: 2px;
+}
+
+.xv-date-picker__period {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap__01);
+  margin-left: var(--gap__01);
+}
+
+.xv-date-picker__period-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: var(--spacing__02) var(--spacing__03);
+  border-radius: var(--border-radius__02);
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+
+  &:hover {
+    background-color: var(--color__surface-layer-01);
+    color: var(--color__text__base);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--effect__focus-ring);
+  }
+}
+
+.xv-date-picker__period-button--active {
+  background-color: var(--color__surface-layer-02);
+  color: var(--color__text__base);
+  font-weight: 500;
+}
+
+.xv-date-picker__popover .rdp-selected .rdp-day_button {
+  background-color: var(--color__status__normal);
+  color: var(--color__text__over-color);
+  border: none;
+  outline: none;
+
+  &:hover {
+    background-color: var(--color__status__hover);
+  }
+}

@@ -1,0 +1,241 @@
+/* ── Layout ── */
+.xv-date-picker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap__01);
+  min-width: 132px;
+  width: clamp(8.25rem, 5.75rem + 12.5vw, 17rem);
+  max-width: 100%;
+  font: var(--text__body-large);
+}
+
+.xv-date-picker__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap__01);
+}
+
+.xv-date-picker__label {
+  color: var(--color__text__base);
+}
+
+.xv-date-picker__description {
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  margin: 0;
+}
+
+/* ── Control ── */
+.xv-date-picker__control-wrapper {
+  position: relative;
+}
+
+.xv-date-picker__control {
+  appearance: none;
+  outline: none;
+  border: 1px solid transparent;
+  width: 100%;
+  min-height: 32px;
+  border-radius: var(--border-radius__02);
+  background-color: var(--color__background-04);
+  font: var(--text__body-medium);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: var(--spacing__03);
+  padding-right: 56px;
+  transition: background-color 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+
+  &:hover {
+    background-color: var(--color__background-05);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--effect__focus-ring);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--color__text__brighter-02);
+    background: var(--color__background-02);
+    border-color: var(--color__border__subtle);
+  }
+}
+
+.xv-date-picker__control--active {
+  border-color: var(--color__border__focus);
+}
+
+.xv-date-picker__control--error {
+  border-color: var(--color__status__danger);
+}
+
+.xv-date-picker__value {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: start;
+}
+
+.xv-date-picker__value--placeholder {
+  color: var(--color__text__brighter-02);
+}
+
+.xv-date-picker__clear-wrapper {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+}
+
+.xv-date-picker__calendar-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color__text__brighter-02);
+}
+
+/* ── Error ── */
+.xv-date-picker__error {
+  font: var(--text__body-medium);
+  padding: var(--spacing__01);
+  color: var(--color__text__danger);
+  display: flex;
+  align-items: center;
+  gap: var(--gap__01);
+
+  & > svg {
+    color: var(--color__system-feedback__red-medium);
+  }
+}
+
+/* ── Popover ── */
+.xv-date-picker__popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: max-content;
+  display: flex;
+  z-index: var(--xv__depth__full, 1000);
+  background-color: var(--color__background-02);
+  border: 1px solid var(--color__border__subtle);
+  border-radius: var(--border-radius__02);
+  box-shadow: 0 1px 2px var(--color__shadow-01), 0 8px 16px var(--color__shadow-02);
+  overflow: hidden;
+}
+
+/* ── Presets ── */
+.xv-date-picker__presets {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap__01);
+  list-style: none;
+  margin: 0;
+  min-width: 140px;
+  padding: var(--spacing__03);
+  border-right: 1px solid var(--color__border__subtle);
+}
+
+.xv-date-picker__preset-button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: var(--spacing__02) var(--spacing__03);
+  border-radius: var(--border-radius__02);
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+
+  &:hover {
+    background-color: var(--color__surface-layer-01);
+    color: var(--color__text__base);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--effect__focus-ring);
+  }
+}
+
+.xv-date-picker__preset-button--active {
+  background-color: var(--color__surface-layer-02);
+  color: var(--color__text__base);
+}
+
+/* ── react-day-picker overrides ── */
+.xv-date-picker__popover .rdp-root {
+  --rdp-accent-color: var(--color__status__normal);
+  --rdp-accent-background-color: var(--color__surface-layer-01);
+  color: var(--color__text__base);
+  margin: 0;
+  padding: var(--spacing__03);
+}
+
+.xv-date-picker__popover .rdp-month_caption {
+  font: var(--text__body-large);
+  color: var(--color__text__base);
+  padding-left: 12px;
+}
+
+.xv-date-picker__popover .rdp-weekday {
+  font: var(--text__body-small);
+  color: var(--color__text__brighter-01);
+}
+
+.xv-date-picker__popover .rdp-nav {
+  color: var(--color__text__brighter-01);
+}
+
+.xv-date-picker__popover .rdp-button_previous,
+.xv-date-picker__popover .rdp-button_next {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--border-radius__02);
+  outline: none;
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+
+  &:hover {
+    background-color: var(--color__surface-layer-01);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--effect__focus-ring);
+  }
+}
+
+.xv-date-picker__popover .rdp-day {
+  width: 32px;
+  height: 32px;
+} 
+
+.xv-date-picker__popover .rdp-day_button {
+  width: 32px;
+  height: 32px;
+  font: var(--text__body-medium);
+  border-radius: var(--border-radius__full);
+  transition: background-color 150ms ease;
+
+  &:hover:not(:disabled) {
+    background-color: var(--color__surface-layer-01);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--effect__focus-ring);
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.xv-date-picker__popover .rdp-today:not(.rdp-selected) .rdp-day_button {
+  color: var(--color__text__base);
+  border: 1px dashed var(--color__border__focus);
+}

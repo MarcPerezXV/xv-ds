@@ -1,0 +1,13 @@
+.xv-text-button.xv-text-button-danger {
+  background-color: var(--color__status__danger);
+  color: var(--color__text__over-color);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color__status__danger__hover);
+  }
+
+  &:disabled {
+    background-color: var(--color__status__danger__disabled);
+    color: var(--color__text__brighter-02);
+  }
+}

@@ -1,0 +1,33 @@
+:root {
+
+    --color__background-01: light-dark(var(--color__white),
+            var(--color__slate-100));
+
+    --color__background-02: light-dark(var(--color__gray-100),
+            var(--color__slate-200));
+
+    --color__background-03: light-dark(var(--color__gray-200),
+            var(--color__slate-300));
+
+    --color__background-04: light-dark(var(--color__gray-300),
+            var(--color__slate-400));
+
+    --color__background-05: light-dark(var(--color__gray-400),
+            var(--color__slate-500));
+
+    --color__background-01__inverted: light-dark(var(--color__slate-100),
+            var(--color__white));
+
+    --color__background-02__inverted: light-dark(var(--color__slate-200),
+            var(--color__gray-100));
+
+    --color__background-03__inverted: light-dark(var(--color__slate-300),
+            var(--color__gray-200));
+
+    --color__background-04__inverted: light-dark(var(--color__slate-400),
+            var(--color__gray-300));
+
+    --color__background-05__inverted: light-dark(var(--color__slate-500),
+            var(--color__gray-400));
+
+}

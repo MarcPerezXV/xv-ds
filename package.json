@@ -1,0 +1,7 @@
+{
+  "name": "xv-ds",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

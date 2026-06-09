@@ -1,0 +1,59 @@
+.xv-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap__01);
+  padding-left: var(--spacing__03);
+  padding-right: var(--spacing__02);
+  height: var(--size__06);
+  border-radius: var(--border-radius__03);
+  background-color: var(--color__surface-layer-02);
+  font: var(--text__body-medium);
+  color: var(--color__text__base);
+}
+
+.xv-tag__label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: var(--spacing__02);
+}
+
+.xv-tag--yellow {
+  border: 1px solid var(--color__system-feedback__yellow);
+  background-color: oklch(from var(--color__system-feedback__yellow) l c h / .24);
+}
+
+.xv-tag--blue {
+  border: 1px solid var(--color__system-feedback__blue);
+  background-color: oklch(from var(--color__system-feedback__blue) l c h / .24);
+}
+
+.xv-tag--orange {
+  border: 1px solid var(--color__system-feedback__orange);
+  background-color: oklch(from var(--color__system-feedback__orange) l c h / .24);
+}
+
+.xv-tag--green {
+  border: 1px solid var(--color__system-feedback__green);
+  background-color: oklch(from var(--color__system-feedback__green) l c h / .24);
+}
+
+.xv-tag--gray {
+    border: 1px solid var(--color__border__subtle);
+    background-color: var(--color__surface-layer-01);
+}
+
+.xv-tag--redHigh {
+    border: 1px solid var(--color__system-feedback__red-high);
+    background-color: oklch(from var(--color__system-feedback__red-high) l c h / .24);
+}
+
+.xv-tag--redMedium {
+    border: 1px solid var(--color__system-feedback__red-medium);
+    background-color: oklch(from var(--color__system-feedback__red-medium) l c h / .24);
+}
+
+.xv-tag--redLow {
+    border: 1px solid var(--color__system-feedback__red-low);
+    background-color: oklch(from var(--color__system-feedback__red-low) l c h / .24);
+}

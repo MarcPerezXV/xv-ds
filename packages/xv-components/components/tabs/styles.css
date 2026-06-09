@@ -1,0 +1,59 @@
+.xv-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.xv-tab {
+  --xv-tabs__tab-status-color: transparent;
+  border-radius: var(--border-radius__02);
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--color__text__brighter-01);
+  padding: 0.5rem 0.75rem;
+  font: var(--text__body-medium);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease,
+    box-shadow 150ms ease;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    border-radius: var(--border-radius__full);
+    width: 100%;
+    background-color: var(--xv-tabs__tab-status-color);
+    bottom: 0;
+    left: 0;
+    transition: background-color 150ms ease;
+  }
+
+  &:hover {
+    --xv-tabs__tab-status-color: var(--color__surface-layer-03);
+  }
+
+  &:focus-visible {
+    --xv-tabs__tab-status-color: var(--color__surface-layer-03);
+    outline: none;
+    box-shadow: var(--effect__focus-ring);
+  }
+}
+
+.xv-tab--active,
+.xv-tab--active:hover,
+.xv-tab--active:focus-visible {
+  color: var(--color__text__base);
+  --xv-tabs__tab-status-color: var(--color__border__focus);
+}
+
+.xv-tab--disabled {
+  cursor: not-allowed;
+  color: var(--color__text__brighter-02);
+
+  &:hover {
+    --xv-tabs__tab-status-color: transparent;
+  }
+}

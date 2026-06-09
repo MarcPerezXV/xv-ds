@@ -1,0 +1,64 @@
+:root {
+
+        --color__logo__01: light-dark(
+        oklch(0.575927 0.112374 228.0454),
+        oklch(1 0 0)
+    );
+
+    --color__logo__02: light-dark(
+        oklch(0.67 0.1005 221.47),
+        oklch(0.8656 0.0026 228.79)
+    );
+
+    --color__logo__03: light-dark(
+        oklch(0.7769 0.0726 218.94),
+        oklch(0.7257 0.0054 228.85)
+    );
+
+    --color__logo__04: light-dark(
+        oklch(0.3771 0.078 268.3),
+        oklch(1 0 0)
+    );
+
+    --color__solution__operation-intelligence: light-dark(
+        oklch(0.6018 0.0785 308.36),
+        oklch(0.691 0.0799 310.16)
+    );
+
+    --color__solution__smart-water-engine: light-dark(
+        oklch(0.6706 0.1276 72.22),
+        oklch(0.7838 0.1225 77.5)
+    );
+
+    --color__solution__water: light-dark(
+        oklch(0.6022 0.1043 219.07),
+        oklch(0.7242 0.1041 220.03)
+    );
+
+    --color__solution__agriculture: light-dark(
+        oklch(0.5354 0.0916 130.45),
+        oklch(0.694 0.0877 120.35)
+    );
+
+    --color__solution__wastewater: light-dark(
+        oklch(0.5097 0.1405 33.31),
+        oklch(0.6989 0.0807 33.92)
+    );
+
+    --color__solution__water-resources: light-dark(
+        oklch(0.586838 0.143361 243.5253),
+        oklch(0.614 0.1275 237.37)
+    );
+
+    --color__solution__customer-management-finance: light-dark(
+        oklch(0.7284 0.1446 94.86),
+        oklch(0.7765 0.1526 94.94)
+    );
+
+    --color__solution__lets-solve-water: light-dark(
+        oklch(0.632 0.094 272.24),
+        oklch(0.632 0.094 272.24)
+    );
+
+    
+}

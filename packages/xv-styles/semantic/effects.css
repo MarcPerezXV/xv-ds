@@ -1,0 +1,32 @@
+:root {
+
+    --color__focus-ring__outer: light-dark(
+        var(--color__blue-300),
+        var(--color__blue-200)
+    );
+
+    --color__focus-ring__inner: light-dark(
+        var(--color__white),
+        var(--color__slate-100)
+    );
+
+    --effect__focus-ring:
+        0 0 0 2px var(--color__focus-ring__inner),
+        0 0 2px 3px var(--color__focus-ring__outer);
+
+    --color__shadow-01: light-dark(
+        oklch(from var(--color__slate-100) l c h / 0.08),
+        oklch(from var(--color__slate-500) l c h / 0.24)
+    );
+
+    --color__shadow-02: light-dark(
+        oklch(from var(--color__slate-100) l c h / 0.04),
+        oklch(from var(--color__slate-500) l c h / 0.12)
+    );
+
+    --color__overlay: light-dark(
+        oklch(from var(--color__gray-500) l c h / 0.70),
+        oklch(from var(--color__slate-500) l c h / 0.70)
+    );
+
+}

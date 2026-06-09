@@ -1,0 +1,35 @@
+{
+  "name": "@xv/components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.19",
+    "@xv/icons": "*",
+    "@xv/styles": "*",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "downshift": "^9.3.6",
+    "react-day-picker": "^10.0.1"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "^10.4.2",
+    "@types/node": "^25.9.2",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^6.0.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "storybook": "^10.4.2",
+    "vite": "^8.0.16",
+    "vite-plugin-svgr": "^5.2.0"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  }
+}

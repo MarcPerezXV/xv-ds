@@ -1,0 +1,40 @@
+.xv-icon-button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: var(--size__06);
+    height: var(--size__06);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius__02);
+    cursor: pointer;
+    transition: background-color 150ms ease, box-shadow 150ms ease;
+    
+    &:focus-visible {
+        box-shadow: var(--effect__focus-ring);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    & > svg {
+    width: 24px;
+    height: 24px;
+  }
+
+   
+
+}
+
+
+.xv-icon-button--small {
+  width: var(--size__04);
+  height: var(--size__04);
+
+  & > svg {
+    width: 16px;
+    height: 16px;
+  }
+}

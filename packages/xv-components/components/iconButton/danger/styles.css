@@ -1,0 +1,13 @@
+.xv-icon-button.xv-icon-button-danger {
+    background-color: var(--color__status__danger);
+    color: var(--color__text__over-color);
+
+    &:hover {
+        background-color: var(--color__status__danger__hover);
+    }
+
+    &:disabled {
+        background-color: var(--color__status__danger__disabled);
+        color: var(--color__text__brighter-02);
+    }
+}

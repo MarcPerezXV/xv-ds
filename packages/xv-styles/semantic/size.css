@@ -1,0 +1,14 @@
+:root {
+
+    --size__01: calc(var(--base-unit) * 3);
+    --size__02: calc(var(--base-unit) * 4);
+    --size__03: calc(var(--base-unit) * 5);
+    --size__04: calc(var(--base-unit) * 6);
+    --size__05: calc(var(--base-unit) * 7);
+    --size__06: calc(var(--base-unit) * 8);
+    --size__07: calc(var(--base-unit) * 9);
+    --size__08: calc(var(--base-unit) * 10);
+    --size__09: calc(var(--base-unit) * 12);
+    --size__10: calc(var(--base-unit) * 16);
+
+}

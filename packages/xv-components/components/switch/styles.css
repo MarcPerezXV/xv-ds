@@ -1,0 +1,95 @@
+.xv-switch {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--gap__02);
+  cursor: pointer;
+  font: var(--text__body-large);
+ 
+}
+
+.xv-switch__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+
+}
+
+.xv-switch__control {
+  position: relative;
+  width: var(--size__06);
+  height: var(--size__02);
+  flex-shrink: 0;
+  border-radius: var(--border-radius__full);
+  background-color: var(--color__surface-layer-02);
+  margin-top: 4px;
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+
+}
+
+.xv-switch__control::after {
+  content: "";
+  position: absolute;
+  width: var(--size__02);
+  height: var(--size__02);
+  border-radius: var(--border-radius__full);
+  background-color: var(--color__surface-layer-03);
+  border: 1px solid var(--color__border__normal);
+  transition: transform 150ms ease;
+}
+
+.xv-switch__input:checked + .xv-switch__control {
+  background-color: var(--color__surface-layer-03);
+}
+
+.xv-switch__input:checked + .xv-switch__control::after {
+  transform: translateX(1rem) scale(1.12);
+  background-color: var(--color__status__normal);
+  border-color: var(--color__border__active);
+}
+
+.xv-switch__input:disabled + .xv-switch__control::after {
+  background-color: var(--color__surface-layer-02);
+  border-color: var(--color__border__disabled);
+}
+
+.xv-switch__input:checked:disabled + .xv-switch__control::after {
+  background-color: var(--color__status__disabled);
+  border-color: var(--color__border__disabled);
+}
+
+.xv-switch__input:focus-visible + .xv-switch__control {
+  box-shadow: var(--effect__focus-ring);
+}
+
+.xv-switch:has(.xv-switch__input:disabled) {
+  cursor: not-allowed;
+}
+
+.xv-switch__input:disabled + .xv-switch__control {
+  background-color: var(--color__surface-layer-01);
+}
+
+.xv-switch__info {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.xv-switch__label {
+  color: var(--color__text__base);
+  user-select: none;
+}
+
+.xv-switch__description {
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  user-select: none;
+}
+
+.xv-switch:has(.xv-switch__input:disabled) .xv-switch__label {
+  color: var(--color__text__brighter-02);
+}
+
+.xv-switch:has(.xv-switch__input:disabled) .xv-switch__description {
+  color: var(--color__text__brighter-02);
+}

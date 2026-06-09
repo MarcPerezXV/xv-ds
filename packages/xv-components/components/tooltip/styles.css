@@ -1,0 +1,47 @@
+.xv-tooltip {
+    padding-inline: var(--spacing__04);
+    padding-block: var(--spacing__02);
+    border-radius: var(--border-radius__02);
+    background-color: var(--color__background-01__inverted);
+    color: var(--color__text__base__inverted);
+    font: var(--text__body-small);
+    z-index: var(--xv__depth__full, 1000);
+    animation: xv-tooltip-enter 150ms ease;
+    min-width: 48px;
+    max-width: 248px;
+    width: max-content;
+}
+
+.xv-tooltip__content {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  white-space: normal;
+}
+
+.xv-tooltip__trigger {
+    display: inline-flex;
+    width: fit-content;
+}
+
+.xv-tooltip__arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color__background-01__inverted);
+    rotate: 45deg;
+}
+
+@keyframes xv-tooltip-enter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

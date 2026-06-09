@@ -1,0 +1,8 @@
+{
+  "name": "@xv/icons",
+  "version": "1.0.0",
+  "files": [
+    "icons"
+  ],
+  "license": "ISC"
+}

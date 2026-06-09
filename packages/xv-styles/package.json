@@ -1,0 +1,21 @@
+{
+  "name": "@xv/styles",
+  "version": "1.0.0",
+
+  "main": "index.css",
+
+  "files": [
+    "index.css",
+    "core",
+    "structure",
+    "brand",
+    "data"
+  ],
+
+  "sideEffects": [
+    "**/*.css"
+  ],
+
+  "license": "ISC"
+}
+

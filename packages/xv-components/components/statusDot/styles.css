@@ -1,0 +1,31 @@
+.xv-status-dot {
+  display: inline-flex;
+  inline-size: var(--xv-status-dot-size, 8px);
+  block-size: var(--xv-status-dot-size, 8px);
+  position: var(--xv-status-dot-position, static);
+  border-radius: var(--border-radius__full);
+  outline: 1px solid var(--color__background-01);
+}
+
+.xv-status-dot--neutral {
+  background-color: light-dark(
+    var(--color__background-04),
+    var(--color__surface-layer-03)
+  );
+}
+
+.xv-status-dot--info {
+  background-color: var(--color__system-feedback__blue);
+}
+
+.xv-status-dot--success {
+  background-color: var(--color__system-feedback__green);
+}
+
+.xv-status-dot--warning {
+  background-color: var(--color__system-feedback__yellow);
+}
+
+.xv-status-dot--danger {
+  background-color: var(--color__system-feedback__red-high);
+}

@@ -1,0 +1,21 @@
+.xv-icon-button.xv-icon-button-ghost {
+
+    background-color: transparent;
+    color: var(--color__text__base);
+
+    &:hover { 
+        background-color: var(--color__surface-layer-01);
+    }
+
+    &:disabled {
+        background-color: transparent;
+        color: var(--color__text__brighter-02);
+    }
+
+    &.xv-icon-button-ghost--active { 
+        background-color: var(--color__surface-layer-02); 
+    }
+
+    &.xv-icon-button-ghost--active:hover { background-color: var(--color__surface-layer-03);}
+
+}

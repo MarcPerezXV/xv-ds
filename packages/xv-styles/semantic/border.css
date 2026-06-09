@@ -1,0 +1,42 @@
+:root {
+    --border-radius__none: 0;
+    --border-radius__01: 2px;
+    --border-radius__02: var(--base-unit);
+    --border-radius__03: calc(var(--base-unit) * 2);
+    --border-radius__full: 999px;
+
+    --border-stroke__none: 0;
+    --border-stroke__01: 1px;
+    --border-stroke__02: 2px;
+
+        
+    --color__border__normal: light-dark(
+        var(--color__gray-500),
+        var(--color__gray-300)
+    );
+
+    --color__border__hover: light-dark(
+        var(--color__gray-600),
+        var(--color__gray-100)
+    );
+
+    --color__border__active: light-dark(
+        var(--color__gray-600),
+        var(--color__gray-100)
+    );
+
+    --color__border__disabled: light-dark(
+        var(--color__gray-300),
+        var(--color__gray-500)
+    );
+
+    --color__border__focus: light-dark(
+        var(--color__blue-300),
+        var(--color__blue-300)
+    );
+
+    --color__border__subtle: light-dark(
+        var(--color__gray-300),
+        var(--color__slate-300)
+    );
+}

@@ -1,0 +1,9 @@
+:root { 
+
+    --gap__none: 0;
+    --gap__01: var(--base-unit);
+    --gap__02: calc(var(--base-unit) * 2);
+    --gap__03: calc(var(--base-unit) * 3);
+    --gap__04: calc(var(--base-unit) * 4);
+    
+}

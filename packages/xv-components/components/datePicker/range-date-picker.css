@@ -1,0 +1,26 @@
+@import "./_base/styles.css";
+
+.xv-date-picker__popover-inner {
+  display: flex;
+}
+
+.xv-date-picker__popover .rdp-selected:not(.rdp-range_middle) .rdp-day_button {
+  background-color: var(--color__status__normal);
+  color: var(--color__text__over-color);
+  border: none;
+  outline: none;
+
+  &:hover {
+    background-color: var(--color__status__hover);
+  }
+}
+
+.xv-date-picker__popover .rdp-selected.rdp-range_middle .rdp-day_button {
+  background-color: transparent;
+  color: var(--color__text__base);
+  border-radius: var(--border-radius__full);
+
+  &:hover {
+    background-color: var(--color__surface-layer-01);
+  }
+}

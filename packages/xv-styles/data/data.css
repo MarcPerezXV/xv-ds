@@ -1,0 +1,81 @@
+:root {
+
+
+    --color__collection__item-01: light-dark(
+        oklch(0.8226 0.08 138.85),
+        oklch(0.8226 0.08 138.85)
+    );
+
+    --color__collection__item-02: light-dark(
+        oklch(0.6378 0.1656 296.07),
+        oklch(0.6378 0.1656 296.07)
+    );
+
+    --color__collection__item-03: light-dark(
+        oklch(0.749 0.1085 224.77),
+        oklch(0.7637 0.1497 230.61)
+    );
+
+    --color__collection__item-04: light-dark(
+        oklch(0.5881 0.1212 68.25),
+        oklch(0.6276 0.1481 59.01)
+    );
+
+    --color__collection__item-05: light-dark(
+        oklch(0.7769 0.1771 326.76),
+        oklch(0.7769 0.1771 326.76)
+    );
+
+    --color__collection__item-06: light-dark(
+        oklch(0.8664 0.1577 92.14),
+        oklch(0.8664 0.1577 92.14)
+    );
+
+    --color__collection__item-07: light-dark(
+        oklch(0.8353 0.0923 217.93),
+        oklch(0.841 0.1179 219.11)
+    );
+
+    --color__collection__item-08: light-dark(
+        oklch(0.5448 0.1595 326.62),
+        oklch(0.6459 0.2398 326.77)
+
+    );
+
+    --color__collection__item-09: light-dark(
+        oklch(0.6257 0.1107 152.8),
+        oklch(0.6884 0.1545 151.01)
+    );
+
+    --color__collection__item-10: light-dark(
+        oklch(0.8017 0.1259 309.9),
+        oklch(0.8549 0.0966 310.21)
+    );
+
+    --color__collection__item-11: light-dark(
+        oklch(0.8299 0.1416 73.64),
+        oklch(0.7916 0.1662 68.62)
+    );
+
+    --color__collection__item-12: light-dark(
+        oklch(0.8671 0.1215 154.2),
+        oklch(0.8671 0.1784 151.97)
+    );
+
+    --color__collection__item-13: light-dark(
+        oklch(0.6373 0.1292 90.67),
+        oklch(0.7682 0.1004 94.55)
+    );
+
+    --color__collection__item-14: light-dark(
+        oklch(0.4699 0.137 291.78),
+        oklch(0.7343 0.1527 293.92)
+    );
+
+    --color__collection__item-15: light-dark(
+        oklch(0.6503 0.0897 204.77),
+        oklch(0.7498 0.1125 205.38)
+    );
+
+    
+}

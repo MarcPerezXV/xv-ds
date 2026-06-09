@@ -1,0 +1,38 @@
+:root {
+
+        --color__system-feedback__red-high: light-dark(
+        var(--color__red-300),
+        var(--color__red-300)
+    );
+
+    --color__system-feedback__red-medium: light-dark(
+        var(--color__red-200),
+        var(--color__red-200)
+    );
+
+    --color__system-feedback__red-low: light-dark(
+        var(--color__red-100),
+        var(--color__red-100)
+    );
+
+    --color__system-feedback__orange: light-dark(
+        var(--color__orange-300),
+        var(--color__orange-300)
+    );
+
+    --color__system-feedback__yellow: light-dark(
+        var(--color__yellow-300),
+        var(--color__yellow-300)
+    );
+
+    --color__system-feedback__green: light-dark(
+        var(--color__green-300),
+        var(--color__green-300)
+    );
+
+    --color__system-feedback__blue: light-dark(
+        var(--color__blue-300),
+        var(--color__blue-200)
+    );
+    
+}

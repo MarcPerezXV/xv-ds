@@ -1,0 +1,13 @@
+:root {
+    --spacing__none: 0;
+    --spacing__01: calc(var(--base-unit) / 2);
+    --spacing__02: var(--base-unit);
+    --spacing__03: calc(var(--base-unit) * 2);
+    --spacing__04: calc(var(--base-unit) * 3);
+    --spacing__05: calc(var(--base-unit) * 4);
+    --spacing__06: calc(var(--base-unit) * 5);
+    --spacing__07: calc(var(--base-unit) * 6);
+    --spacing__08: calc(var(--base-unit) * 8);
+    --spacing__09: calc(var(--base-unit) * 10);
+    --spacing__10: calc(var(--base-unit) * 12);
+}
