@@ -1,0 +1,104 @@
+.xv-dialog {
+  border: none;
+  border-radius: var(--border-radius__02);
+  background-color: var(--color__background-02);
+  padding: 0;
+  max-width: 472px;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 24px var(--color__shadow-02);
+  animation: xv-dialog-enter 150ms ease;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: xv-dialog-backdrop-enter 150ms ease;
+  }
+}
+
+.xv-dialog__inner {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+}
+
+.xv-dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing__02);
+  padding-left: var(--spacing__04);
+  border-bottom: 1px solid var(--color__border__subtle);
+}
+
+.xv-dialog__title {
+  font: var(--text__body-medium);
+  color: var(--color__text__brighter-01);
+  font-weight: 500;
+}
+
+.xv-dialog__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--gap__03);
+  padding: var(--spacing__08) var(--spacing__06);
+  background-color: var(--color__background-01);
+  
+}
+
+@container (min-width: 400px) {
+  .xv-dialog__body {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: start;
+  }
+}
+
+.xv-dialog__icon {
+  flex-shrink: 0;
+}
+
+.xv-dialog__message {
+  font: var(--text__body-large);
+  color: var(--color__text__base);
+  margin: 0;
+}
+
+.xv-dialog__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap__02);
+  padding: var(--spacing__03);
+  border-top: 1px solid var(--color__border__subtle);
+}
+
+.xv-dialog--informative .xv-dialog__icon {
+  color: var(--color__system-feedback__blue);
+}
+
+.xv-dialog--warning .xv-dialog__icon {
+  color: var(--color__system-feedback__yellow);
+}
+
+.xv-dialog--error .xv-dialog__icon {
+  color: var(--color__system-feedback__red-high);
+}
+
+@keyframes xv-dialog-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes xv-dialog-backdrop-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
