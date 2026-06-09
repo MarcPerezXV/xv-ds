@@ -47,7 +47,6 @@ export const BaseInput = forwardRef<HTMLInputElement, BaseInputProps>(
 
     {error && (
       <div id={errorId} className="xv-text-input__error">
-        <Icon name="xMarkSquare" size="small" />
         {error}
       </div>
     )}
