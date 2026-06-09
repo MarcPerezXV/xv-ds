@@ -24,11 +24,6 @@ const meta: Meta<typeof MultiSelect> = {
       control: "text",
       description: "Helper text shown below the label.",
     },
-    clearLabel: {
-      control: "text",
-      description: "Tooltip label for the clear button.",
-      table: { defaultValue: { summary: "Clear" } },
-    },
     disabled: {
     control: "boolean",
     description: "Disables the select.",
@@ -62,7 +57,6 @@ export const Default: Story = {
   args: {
     label: "Label",
     description: "",
-    clearLabel: "Clear",
     error: "",
     disabled: false
   },

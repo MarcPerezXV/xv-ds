@@ -1,6 +1,7 @@
 import { useSelect } from "downshift";
 import { BaseSelect, type SelectOption } from "../_base/Base";
 import { CheckboxControl } from "../../checkbox/CheckboxControl";
+import { useDSLocale } from "../../../provider/DSContext";
 
 interface MultiSelectProps {
   label: string;
@@ -8,7 +9,6 @@ interface MultiSelectProps {
   options: SelectOption[];
   value: string[];
   onChange: (value: string[]) => void;
-  clearLabel?: string;
   disabled?: boolean;
   error?: string;
 }
@@ -19,10 +19,10 @@ export const MultiSelect = ({
   options,
   value,
   onChange,
-  clearLabel,
   disabled,
-  error
+  error,
 }: MultiSelectProps) => {
+  const locale = useDSLocale();
   const selectedItems = options.filter((item) => value.includes(item.id));
 
   const {
@@ -34,28 +34,21 @@ export const MultiSelect = ({
     getItemProps,
   } = useSelect({
     items: options,
-
     itemToString: (item) => item?.label ?? "",
-
     selectedItem: null,
-
     onSelectedItemChange: ({ selectedItem }) => {
       if (!selectedItem) return;
-
       if (value.includes(selectedItem.id)) {
         onChange(value.filter((id) => id !== selectedItem.id));
       } else {
         onChange([...value, selectedItem.id]);
       }
     },
-
     scrollIntoView: (node) => {
       node.scrollIntoView({ block: "nearest" });
     },
-
     stateReducer: (state, actionAndChanges) => {
       const { changes, type } = actionAndChanges;
-
       switch (type) {
         case useSelect.stateChangeTypes.ToggleButtonKeyDownEnter:
         case useSelect.stateChangeTypes.ToggleButtonKeyDownSpaceButton:
@@ -65,20 +58,17 @@ export const MultiSelect = ({
             isOpen: true,
             highlightedIndex: state.highlightedIndex,
           };
-
         case useSelect.stateChangeTypes.ToggleButtonKeyDownArrowDown:
           if (state.highlightedIndex === options.length - 1) {
             return { ...changes, highlightedIndex: 0 };
           }
           break;
-
         case useSelect.stateChangeTypes.ToggleButtonKeyDownArrowUp:
           if (state.highlightedIndex === 0) {
             return { ...changes, highlightedIndex: options.length - 1 };
           }
           break;
       }
-
       return changes;
     },
   });
@@ -95,21 +85,23 @@ export const MultiSelect = ({
       getLabelProps={getLabelProps}
       getMenuProps={getMenuProps}
       getItemProps={getItemProps}
-      disabled={disabled}
-      error={error}
       hasValue={selectedItems.length > 0}
       onClear={() => onChange([])}
       isSelected={(item) => value.includes(item.id)}
-      clearLabel={clearLabel}
       valueContent={
         selectedItems.length > 0 ? `${selectedItems.length} selected` : ""
       }
       renderOption={(item) => (
         <>
-          <CheckboxControl checked={value.includes(item.id)} className="xv-select__checkbox"/>
+          <CheckboxControl
+            checked={value.includes(item.id)}
+            className="xv-select__checkbox"
+          />
           <span className="xv-select__option-label">{item.label}</span>
         </>
       )}
+      disabled={disabled}
+      error={error}
     />
   );
 };

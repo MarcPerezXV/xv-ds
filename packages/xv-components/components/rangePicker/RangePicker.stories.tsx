@@ -40,11 +40,7 @@ const meta: Meta<typeof RangeInput> = {
       description: "Disables the range input.",
       table: { defaultValue: { summary: "false" } },
     },
-    clearLabel: {
-      control: "text",
-      description: "Tooltip label for the clear button.",
-      table: { defaultValue: { summary: "Clear" } },
-    },
+
     value: { table: { disable: true } },
     onChange: { table: { disable: true } },
     className: { table: { disable: true } },
@@ -66,7 +62,6 @@ export const Default: Story = {
     max: 200,
     step: 10,
     mode: "both",
-    clearLabel: "Clear",
     error: "",
     disabled: false
   },

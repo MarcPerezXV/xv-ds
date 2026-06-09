@@ -43,10 +43,7 @@ const meta: Meta<typeof TimePicker> = {
       description: "Disables the time picker.",
       table: { defaultValue: { summary: "false" } },
     },
-    clearLabel: {
-      control: "text",
-      description: "Tooltip label for the clear button.",
-    },
+   
     value: { table: { disable: true } },
     onChange: { table: { disable: true } },
     presets: { table: { disable: true } },
@@ -66,7 +63,6 @@ export const Default: Story = {
     label: "Time",
     description: "",
     placeholder: "Select time",
-    clearLabel: "Clear",
     minuteStep: 5,
     hour12: false,
     error: "",

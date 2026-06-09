@@ -27,17 +27,7 @@ const meta: Meta<typeof PasswordInput> = {
     placeholder: {
       control: "text",
       description: "Placeholder text.",
-    },
-    showPasswordLabel: {
-      control: "text",
-      description: "Tooltip label for the show password button.",
-      table: { defaultValue: { summary: "Show password" } },
-    },
-    hidePasswordLabel: {
-      control: "text",
-      description: "Tooltip label for the hide password button.",
-      table: { defaultValue: { summary: "Hide password" } },
-    },
+    }
   },
 };
 
@@ -49,8 +39,6 @@ export const Default: Story = {
     label: "Label",
     placeholder: "Enter password...",
     description: "",
-    showPasswordLabel: "Show password",
-    hidePasswordLabel: "Hide password",
     error: "",
     disabled: false
   },

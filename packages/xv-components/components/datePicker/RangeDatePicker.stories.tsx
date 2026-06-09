@@ -39,10 +39,7 @@ const meta: Meta<typeof RangeDatePicker> = {
       description: "Disables the date picker.",
       table: { defaultValue: { summary: "false" } },
     },
-    clearLabel: {
-      control: "text",
-      description: "Tooltip label for the clear button.",
-    },
+    
     dateFormat: {
       control: "text",
       description: "Date format string (date-fns).",
@@ -77,7 +74,7 @@ export const Default: Story = {
     placeholder: "Select range date",
     dateFormat: "dd/MM/yyyy",
     weekStartsOn: 1,
-    clearLabel: "Clear",
+    
     disableFuture: false,
     error: "",
     disabled: false,

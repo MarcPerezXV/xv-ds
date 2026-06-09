@@ -52,10 +52,7 @@ const meta: Meta<typeof DatePicker> = {
       description: "Disables the date picker.",
       table: { defaultValue: { summary: "false" } },
     },
-    clearLabel: {
-      control: "text",
-      description: "Tooltip label for the clear button.",
-    },
+    
     dateFormat: {
       control: "text",
       description: "Date format string (date-fns).",
@@ -86,7 +83,7 @@ export const DateOnly: Story = {
     dateFormat: "dd/MM/yyyy",
     disableFuture: false,
     
-    clearLabel: "Clear",
+
     error: "",
     disabled: false
   },
@@ -104,8 +101,7 @@ export const DateTime: Story = {
     placeholder: "Select datetime",
     dateFormat: "dd/MM/yyyy",
     disableFuture: false,
-    
-    clearLabel: "Clear",
+
     minuteStep: 5,
     hour12: false,
     error: "",

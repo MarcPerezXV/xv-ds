@@ -1,5 +1,5 @@
-import type { Preview, Decorator} from '@storybook/react-vite'
-
+import type { Preview, Decorator } from '@storybook/react-vite'
+import { DSProvider } from '@xv/components'
 import "@xv/styles";
 import { useEffect } from "react";
 
@@ -14,19 +14,24 @@ const withTheme: Decorator = (Story, context) => {
   return <Story />;
 };
 
+const withDSProvider: Decorator = (Story) => (
+  <DSProvider>
+    <Story />
+  </DSProvider>
+);
+
 const preview: Preview = {
-  
   globalTypes: {
     theme: {
       name: "Theme",
       defaultValue: "dark",
       toolbar: {
         icon: "circlehollow",
-        items: ["light", "dark"]
+        items: ["light", "dark"],
       },
     },
   },
-  decorators: [withTheme],
+  decorators: [withDSProvider, withTheme],
   parameters: {
     controls: {
       matchers: {
@@ -35,7 +40,7 @@ const preview: Preview = {
       },
       expanded: true,
     },
-    layout: "fullscreen"
+    layout: "fullscreen",
   },
 };
 

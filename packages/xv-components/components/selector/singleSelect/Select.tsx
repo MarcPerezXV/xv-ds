@@ -1,5 +1,6 @@
 import { useSelect } from "downshift";
 import { BaseSelect, type SelectOption } from "../_base/Base";
+import { useDSLocale } from "../../../provider/DSContext";
 
 interface SingleSelectProps {
   label: string;
@@ -7,7 +8,6 @@ interface SingleSelectProps {
   options: SelectOption[];
   value: string;
   onChange: (value: string) => void;
-  clearLabel?: string;
   disabled?: boolean;
   error?: string;
 }
@@ -18,10 +18,10 @@ export const SingleSelect = ({
   options,
   value,
   onChange,
-  clearLabel,
   disabled,
-  error
+  error,
 }: SingleSelectProps) => {
+  const locale = useDSLocale();
   const selectedItem = options.find((item) => item.id === value) ?? null;
 
   const {
@@ -34,37 +34,29 @@ export const SingleSelect = ({
   } = useSelect({
     items: options,
     selectedItem,
-
     itemToString: (item) => item?.label ?? "",
-
     onSelectedItemChange: ({ selectedItem }) => {
       if (!selectedItem) return;
       onChange(selectedItem.id);
     },
-
     scrollIntoView: (node) => {
       node.scrollIntoView({ block: "nearest" });
     },
-
     initialHighlightedIndex: 0,
-
     stateReducer: (state, actionAndChanges) => {
       const { changes, type } = actionAndChanges;
-
       switch (type) {
         case useSelect.stateChangeTypes.ToggleButtonKeyDownArrowDown:
           if (state.highlightedIndex === options.length - 1) {
             return { ...changes, highlightedIndex: 0 };
           }
           break;
-
         case useSelect.stateChangeTypes.ToggleButtonKeyDownArrowUp:
           if (state.highlightedIndex === 0) {
             return { ...changes, highlightedIndex: options.length - 1 };
           }
           break;
       }
-
       return changes;
     },
   });
@@ -82,14 +74,13 @@ export const SingleSelect = ({
       getItemProps={getItemProps}
       hasValue={!!selectedItem}
       onClear={() => onChange("")}
-      disabled={disabled}
-      error={error}
       isSelected={(item) => item.id === value}
       valueContent={selectedItem?.label ?? ""}
       renderOption={(item) => (
         <span className="xv-select__option-label">{item.label}</span>
       )}
-      clearLabel={clearLabel}
+      disabled={disabled}
+      error={error}
     />
   );
 };

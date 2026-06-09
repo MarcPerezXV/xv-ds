@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { GhostIconButton } from "../iconButton";
+import { useDSLocale } from "../../provider/DSContext";
 
 import "./styles.css";
 import { ScrollColumn } from "../_shared/ScrollColumn";
@@ -28,7 +29,6 @@ interface TimePickerProps {
   hour12?: boolean;
   minuteStep?: 1 | 5 | 10 | 15 | 30;
   presets?: TimePreset[];
-  clearLabel?: string;
 }
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -42,15 +42,6 @@ const formatTime = (value: TimeValue, hour12: boolean) => {
   return `${pad(value.hours)}:${pad(value.minutes)}`;
 };
 
-interface ScrollColumnProps {
-  items: number[];
-  selected: number;
-  onSelect: (value: number) => void;
-  format?: (n: number) => string;
-}
-
-
-
 export const TimePicker = ({
   label,
   description,
@@ -63,10 +54,10 @@ export const TimePicker = ({
   hour12 = false,
   minuteStep = 1,
   presets,
-  clearLabel,
 }: TimePickerProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const locale = useDSLocale();
 
   const hours = Array.from({ length: hour12 ? 12 : 24 }, (_, i) => hour12 ? i + 1 : i);
   const minutes = Array.from({ length: Math.ceil(60 / minuteStep) }, (_, i) => i * minuteStep);
@@ -75,7 +66,7 @@ export const TimePicker = ({
     ? (value?.hours ?? 12) % 12 || 12
     : (value?.hours ?? 0);
 
-  const formatHour = (h: number) => hour12 ? pad(h) : pad(h);
+  const formatHour = (h: number) => pad(h);
   const period = value ? (value.hours >= 12 ? "PM" : "AM") : "AM";
 
   useEffect(() => {
@@ -154,8 +145,8 @@ export const TimePicker = ({
           <div className="xv-time-picker__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={clearLabel ?? "Clear"}
-              description={clearLabel ?? "Clear"}
+              altText={locale.clearTime}
+              description={locale.clearTime}
               size="small"
               onClick={(e) => {
                 e.stopPropagation();

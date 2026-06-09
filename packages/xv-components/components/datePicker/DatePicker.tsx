@@ -5,6 +5,7 @@ import { clsx } from "clsx";
 
 import { GhostIconButton } from "../iconButton";
 import { ScrollColumn } from "../_shared/ScrollColumn";
+import { useDSLocale } from "../../provider/DSContext";
 
 import "react-day-picker/dist/style.css";
 import "./date-picker.css";
@@ -42,7 +43,6 @@ interface DatePickerProps {
   minuteStep?: 1 | 5 | 10 | 15 | 30;
   weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   presets?: DatePickerPreset[];
-  clearLabel?: string;
 }
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -79,10 +79,10 @@ export const DatePicker = ({
   minuteStep = 1,
   weekStartsOn = 1,
   presets,
-  clearLabel,
 }: DatePickerProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const locale = useDSLocale();
 
   const defaultPlaceholder = showTime ? "Select date and time" : "Select date";
 
@@ -199,8 +199,8 @@ export const DatePicker = ({
           <div className="xv-date-picker__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={clearLabel ?? "Clear"}
-              description={clearLabel ?? "Clear"}
+              altText={locale.clearDate}
+              description={locale.clearDate}
               size="small"
               onClick={(e) => {
                 e.stopPropagation();

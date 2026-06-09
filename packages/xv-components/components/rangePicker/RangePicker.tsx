@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { clsx } from "clsx";
 import { GhostIconButton } from "../iconButton";
-
+import { useDSLocale } from "../../provider/DSContext";
 import { NumberInput } from "../input";
 
 import "./styles.css";
@@ -25,7 +25,6 @@ interface RangeInputProps {
   min: number;
   max: number;
   step?: number;
-  clearLabel?: string;
   mode?: RangeMode;
 }
 
@@ -40,11 +39,11 @@ export const RangeInput = ({
   min,
   max,
   step = 1,
-  clearLabel,
   mode = "both",
 }: RangeInputProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const locale = useDSLocale();
 
   const from = value?.from ?? min;
   const to = value?.to ?? max;
@@ -116,8 +115,8 @@ export const RangeInput = ({
           <div className="xv-range-input__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={clearLabel ?? "Clear"}
-              description={clearLabel ?? "Clear"}
+              altText={locale.clearRangeInput}
+              description={locale.clearRangeInput}
               size="small"
               onClick={(e) => {
                 e.stopPropagation();

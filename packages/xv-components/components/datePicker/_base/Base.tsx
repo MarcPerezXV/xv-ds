@@ -1,6 +1,6 @@
-import { forwardRef, useState, useRef, useEffect, ReactNode } from "react";
+import { useRef, useEffect, ReactNode } from "react";
 import { clsx } from "clsx";
-
+import { useDSLocale } from "../../../provider/DSContext";
 
 import "./styles.css";
 import { GhostIconButton } from "../../iconButton";
@@ -17,7 +17,6 @@ export interface BaseDatePickerProps {
   onToggle: () => void;
   onClose: () => void;
   valueLabel: string;
-  clearLabel?: string;
   hasValue: boolean;
   onClear: () => void;
   children: ReactNode;
@@ -34,19 +33,16 @@ export const BaseDatePicker = ({
   onToggle,
   onClose,
   valueLabel,
-  clearLabel,
   hasValue,
   onClear,
   children,
 }: BaseDatePickerProps) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const locale = useDSLocale();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target as Node)
-      ) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
         onClose();
       }
     };
@@ -62,8 +58,7 @@ export const BaseDatePicker = ({
 
   const descriptionId = description ? "date-picker-description" : undefined;
   const errorId = error ? "date-picker-error" : undefined;
-  const ariaDescribedBy =
-    [descriptionId, errorId].filter(Boolean).join(" ") || undefined;
+  const ariaDescribedBy = [descriptionId, errorId].filter(Boolean).join(" ") || undefined;
 
   return (
     <div className={clsx("xv-date-picker", className)} ref={wrapperRef}>
@@ -90,12 +85,10 @@ export const BaseDatePicker = ({
           )}
           onClick={onToggle}
         >
-          <span
-            className={clsx(
-              "xv-date-picker__value",
-              !hasValue && "xv-date-picker__value--placeholder",
-            )}
-          >
+          <span className={clsx(
+            "xv-date-picker__value",
+            !hasValue && "xv-date-picker__value--placeholder",
+          )}>
             {hasValue ? valueLabel : placeholder}
           </span>
         </button>
@@ -104,8 +97,8 @@ export const BaseDatePicker = ({
           <div className="xv-date-picker__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={clearLabel ?? "Clear"}
-              description={clearLabel ?? "Clear"}
+              altText={locale.clearRange}
+              description={locale.clearRange}
               size="small"
               onClick={(e) => {
                 e.stopPropagation();

@@ -24,7 +24,6 @@ interface RangeDatePickerProps {
   value?: DateRange;
   onChange?: (range: DateRange | undefined) => void;
   dateFormat?: string;
-  clearLabel?: string;
   weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   presets?: DateRangePreset[];
 }
@@ -37,11 +36,9 @@ export const RangeDatePicker = ({
   disabled,
   className,
   disableFuture = false,
-  
   value,
   onChange,
   dateFormat = "dd/MM/yyyy",
-  clearLabel,
   weekStartsOn = 1,
   presets,
 }: RangeDatePickerProps) => {
@@ -84,7 +81,6 @@ export const RangeDatePicker = ({
       onClose={() => setIsOpen(false)}
       hasValue={!!value?.from}
       valueLabel={valueLabel}
-      clearLabel={clearLabel}
       onClear={() => {
         onChange?.(undefined);
         setIsOpen(false);

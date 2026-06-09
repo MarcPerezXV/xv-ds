@@ -21,12 +21,7 @@ const meta: Meta<typeof Tag> = {
       description: "Whether the tag can be closed.",
       table: { defaultValue: { summary: "false" } },
     },
-     closeLabel: {
-      control: "text",
-      description: "Tooltip label for the close button.",
-      table: { defaultValue: { summary: "Close tag" } },
-      if: { arg: "closable", truthy: true },
-    },
+    
     onClose: { table: { disable: true } },
     className: { table: { disable: true } },
   },
@@ -40,6 +35,6 @@ export const Default: Story = {
     label: "Tag",
     type: "blue",
      closable: false,
-    closeLabel: "Close tag"
+
   },
 };

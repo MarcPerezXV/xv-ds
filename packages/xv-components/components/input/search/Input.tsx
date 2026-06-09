@@ -1,16 +1,17 @@
 import { forwardRef } from "react";
 import { BaseInput, BaseInputProps } from "../_base/Base";
-
-import { GhostIconButton } from "../../iconButton";
 import { Icon } from "../../icon";
+import { GhostIconButton } from "../../iconButton";
+import { useDSLocale } from "../../../provider/DSContext";
 
 export interface SearchInputProps extends Omit<BaseInputProps, "type"> {
-  clearLabel?: string;
   onClear?: () => void;
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
-  ({ clearLabel, onClear, value, onChange, className, ...props }, ref) => {
+  ({ onClear, value, onChange, className, ...props }, ref) => {
+    const locale = useDSLocale();
+
     return (
       <BaseInput
         ref={ref}
@@ -24,8 +25,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             {value && onClear && (
               <GhostIconButton
                 icon="close"
-                altText={clearLabel ?? "Clear"}
-                description={clearLabel ?? "Clear"}
+                altText={locale.clearSearch}
+                description={locale.clearSearch}
                 size="small"
                 onClick={onClear}
               />
