@@ -1,0 +1,120 @@
+.xv-toast {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap__02);
+    min-height: var(--size__09);
+    max-width: 480px;
+    padding: var(--spacing__03) var(--spacing__04);
+    background-color: var(--color__background-02__inverted);
+    border-radius: var(--border-radius__02);
+    box-shadow: 0 4px 16px var(--color__shadow-01);
+    border-left: 3px solid transparent;
+    animation: xv-toast-enter 150ms ease;
+}
+
+.xv-toast--informative {
+    border-left-color: var(--color__system-feedback__blue);
+}
+
+.xv-toast--positive {
+    border-left-color: var(--color__system-feedback__green);
+}
+
+.xv-toast--neutral {
+    border-left-color: var(--color__border__normal);
+}
+
+.xv-toast--negative {
+    border-left-color: var(--color__system-feedback__red-high);
+}
+
+.xv-toast--warning {
+    border-left-color: var(--color__system-feedback__yellow);
+}
+
+.xv-toast__icon {
+    flex-shrink: 0;
+}
+
+.xv-toast__icon--informative {
+    color: var(--color__system-feedback__blue);
+}
+
+.xv-toast__icon--positive {
+    color: var(--color__system-feedback__green);
+}
+
+.xv-toast__icon--neutral {
+    color: var(--color__text__brighter-01__inverted);
+}
+
+.xv-toast__icon--negative {
+    color: var(--color__system-feedback__red-high);
+}
+
+.xv-toast__icon--warning {
+    color: var(--color__system-feedback__yellow);
+}
+
+.xv-toast__message {
+    flex: 1 1 0%;
+    font: var(--text__body-medium);
+    color: var(--color__text__base__inverted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.xv-toast__separator {
+    display: block;
+    width: var(--border-stroke__01);
+    align-self: stretch;
+    background-color: var(--color__border__normal);
+    flex-shrink: 0;
+    margin-inline: var(--spacing__01);
+}
+
+.xv-toast .xv-toast__action-btn {
+
+    color: var(--color__text__base__inverted);
+
+
+    &:hover {
+        color: var(--color__text__base__inverted);
+        background-color: var(--color__surface-layer-01__inverted);
+    }
+
+    :active,
+    &.xv-text-button-ghost--active {
+        background-color: var(--color__surface-layer-02__inverted);
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: var(--effect__focus-ring);
+    }
+}
+
+.xv-toast .xv-toast__close-btn {
+    flex-shrink: 0;
+    color: var(--color__text__base__inverted);
+}
+
+
+@keyframes xv-toast-enter {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .xv-toast {
+        animation: none;
+    }
+}
