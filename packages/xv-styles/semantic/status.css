@@ -1,33 +1,21 @@
 :root {
 
-        --color__status__normal: light-dark(
-        var(--color__blue-300),
-        var(--color__blue-300)
-    );
+    --color__status__normal: light-dark(var(--color__orange-300),
+            var(--color__orange-300));
 
-    --color__status__hover: light-dark(
-        var(--color__blue-400),
-        var(--color__blue-400)
-    );
+    --color__status__hover: light-dark(var(--color__blue-400),
+            var(--color__blue-400));
 
-    --color__status__disabled: light-dark(
-        var(--color__blue-100),
-        var(--color__blue-500)
-    );
+    --color__status__disabled: light-dark(var(--color__blue-100),
+            var(--color__blue-500));
 
-    --color__status__danger: light-dark(
-        var(--color__red-300),
-        var(--color__red-300)
-    );
+    --color__status__danger: light-dark(var(--color__red-300),
+            var(--color__red-300));
 
-    --color__status__danger__hover: light-dark(
-        var(--color__red-400),
-        var(--color__red-400)
-    );
+    --color__status__danger__hover: light-dark(var(--color__red-400),
+            var(--color__red-400));
 
-    --color__status__danger__disabled: light-dark(
-        var(--color__red-100),
-        var(--color__red-500)
-    );
+    --color__status__danger__disabled: light-dark(var(--color__red-100),
+            var(--color__red-500));
 
 }
