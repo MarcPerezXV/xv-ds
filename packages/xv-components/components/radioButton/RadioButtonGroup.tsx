@@ -5,7 +5,7 @@ import "./_base/styles.css";
 
 export interface RadioOption {
   value: string;
-  label?: string;
+  label: string;
   description?: string;
   disabled?: boolean;
   disabledReason?: string;

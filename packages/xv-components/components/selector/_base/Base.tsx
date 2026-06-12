@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { clsx } from "clsx";
 import { useSelect } from "downshift";
 import { useFloating, flip, shift, offset, autoUpdate, size } from "@floating-ui/react";
-import { useDSLocale } from "../../../provider/DSContext";
+import { useDSMessages } from "../../../provider/DSContext";
 
 import "./styles.css";
 import { GhostIconButton } from "../../button";
@@ -54,7 +54,7 @@ export const BaseSelect = ({
   disabled,
   error,
 }: BaseSelectProps) => {
-  const locale = useDSLocale();
+  const messages = useDSMessages();
 
   const { refs, floatingStyles } = useFloating({
     open: isOpen,
@@ -102,8 +102,8 @@ export const BaseSelect = ({
           <div className="xv-select__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={locale.clearSelection}
-              description={locale.clearSelection}
+              altText={messages.clearSelection}
+              description={messages.clearSelection}
               size="small"
               onClick={(event) => {
                 event.stopPropagation();

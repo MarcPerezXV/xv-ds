@@ -1,11 +1,11 @@
 import { clsx } from "clsx";
-import { GhostIconButton } from "../button";
-import { useDSLocale } from "../../provider/DSContext";
-import { usePopover } from "../../hooks/use.popover";
-import { NumberInput } from "../input";
+import { GhostIconButton } from "../../button";
+import { useDSMessages } from "../../../provider/DSContext";
+import { usePopover } from "../../../hooks/use.popover";
+import { NumericInput } from "..";
 
 import "./styles.css";
-import { Icon } from "../icon";
+import { Icon } from "../../icon";
 
 export interface RangeValue {
   from: number;
@@ -28,7 +28,7 @@ interface RangeInputProps {
   mode?: RangeMode;
 }
 
-export const RangeInput = ({
+export const NumericRangeInput = ({
   label,
   description,
   error,
@@ -44,7 +44,7 @@ export const RangeInput = ({
   const { isOpen, toggle, close, wrapperRef, refs, floatingStyles } = usePopover({
     matchReferenceWidth: true,
   });
-  const locale = useDSLocale();
+  const messages = useDSMessages();
 
   const from = value?.from ?? min;
   const to = value?.to ?? max;
@@ -100,8 +100,8 @@ export const RangeInput = ({
           <div className="xv-range-input__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={locale.clearRangeInput}
-              description={locale.clearRangeInput}
+              altText={messages.clearRangeInput}
+              description={messages.clearRangeInput}
               size="small"
               onClick={(e) => {
                 e.stopPropagation();
@@ -168,7 +168,7 @@ export const RangeInput = ({
 
           <div className="xv-range-input__inputs">
             <div className="xv-range-input__number-wrapper">
-              <NumberInput
+              <NumericInput
                 aria-label="Minimum value"
                 value={from}
                 min={min}
@@ -180,7 +180,7 @@ export const RangeInput = ({
             </div>
             <span className="xv-range-input__inputs-separator">—</span>
             <div className="xv-range-input__number-wrapper">
-              <NumberInput
+              <NumericInput
                 aria-label="Maximum value"
                 value={to}
                 min={from}
@@ -197,4 +197,4 @@ export const RangeInput = ({
   );
 };
 
-RangeInput.displayName = "RangeInput";
+NumericRangeInput.displayName = "NumericRangeInput";

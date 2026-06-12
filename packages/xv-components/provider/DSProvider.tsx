@@ -1,18 +1,18 @@
 // provider/DSProvider.tsx
 import { ReactNode } from "react";
-import { DSContext, defaultLocale } from "./DSContext";
-import { DSLocale } from "./types";
+import { DSContext, defaultMessages } from "./DSContext";
+import { DSMessages } from "./types";
 
 export interface DSProviderProps {
   children: ReactNode;
-  locale?: DSLocale;
+  message?: DSMessages;
 }
 
-export const DSProvider = ({ children, locale }: DSProviderProps) => {
+export const DSProvider = ({ children, message }: DSProviderProps) => {
   return (
     <DSContext.Provider
       value={{
-        locale: { ...defaultLocale, ...locale },
+        message: { ...defaultMessages, ...message },
       }}
     >
       {children}

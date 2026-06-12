@@ -1,11 +1,11 @@
 import { clsx } from "clsx";
-import { GhostIconButton } from "../button";
-import { useDSLocale } from "../../provider/DSContext";
-import { usePopover } from "../../hooks/use.popover";
+import { GhostIconButton } from "../../button";
+import { useDSMessages } from "../../../provider/DSContext";
+import { usePopover } from "../../../hooks/use.popover";
 
 import "./styles.css";
-import { ScrollColumn } from "../_shared/ScrollColumn";
-import { Icon } from "../icon";
+import { ScrollColumn } from "../../_shared/ScrollColumn";
+import { Icon } from "../../icon";
 
 export interface TimeValue {
   hours: number;
@@ -56,7 +56,7 @@ export const TimePicker = ({
   presets,
 }: TimePickerProps) => {
   const { isOpen, toggle, close, wrapperRef, refs, floatingStyles } = usePopover();
-  const locale = useDSLocale();
+  const messages = useDSMessages();
 
   const hours = Array.from({ length: hour12 ? 12 : 24 }, (_, i) => hour12 ? i + 1 : i);
   const minutes = Array.from({ length: Math.ceil(60 / minuteStep) }, (_, i) => i * minuteStep);
@@ -128,8 +128,8 @@ export const TimePicker = ({
           <div className="xv-time-picker__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={locale.clearTime}
-              description={locale.clearTime}
+              altText={messages.clearTime}
+              description={messages.clearTime}
               size="small"
               onClick={(e) => {
                 e.stopPropagation();

@@ -1,14 +1,14 @@
 import { forwardRef, useState } from "react";
 import { BaseInput, BaseInputProps } from "../_base/Base";
 import { GhostIconButton } from "../../button";
-import { useDSLocale } from "../../../provider/DSContext";
+import { useDSMessages } from "../../../provider/DSContext";
 
 export interface PasswordInputProps extends Omit<BaseInputProps, "type"> {}
 
 export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
   ({ className, ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
-    const locale = useDSLocale();
+    const messages = useDSMessages();
 
     return (
       <BaseInput
@@ -19,8 +19,8 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         trailingSlot={
           <GhostIconButton
             icon={showPassword ? "eyeSlash" : "eye"}
-            altText={showPassword ? locale.hidePassword : locale.showPassword}
-            description={showPassword ? locale.hidePassword : locale.showPassword}
+            altText={showPassword ? messages.hidePassword : messages.showPassword}
+            description={showPassword ? messages.hidePassword : messages.showPassword}
             size="small"
             onClick={() => setShowPassword((prev) => !prev)}
           />

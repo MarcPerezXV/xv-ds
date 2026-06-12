@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NumberInput } from "./Input";
+import { NumericInput } from "./Input";
 
-const meta: Meta<typeof NumberInput> = {
-  title: "Components/Input/Number",
-  component: NumberInput,
+const meta: Meta<typeof NumericInput> = {
+  title: "Components/Input/Numeric",
+  component: NumericInput,
   tags: ["autodocs"],
   parameters: { layout: "centered" },
   argTypes: {
@@ -45,7 +45,7 @@ const meta: Meta<typeof NumberInput> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof NumberInput>;
+type Story = StoryObj<typeof NumericInput>;
 
 export const Default: Story = {
   args: {

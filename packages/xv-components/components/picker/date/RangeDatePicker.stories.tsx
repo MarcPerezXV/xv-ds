@@ -5,7 +5,7 @@ import { DateRange } from "react-day-picker";
 import { subDays, startOfMonth, startOfYear } from "date-fns";
 
 const meta: Meta<typeof RangeDatePicker> = {
-  title: "Components/DatePicker/Range",
+  title: "Components/Picker/RangeDate",
   component: RangeDatePicker,
   tags: ["autodocs"],
   parameters: { layout: "fullscreen" },

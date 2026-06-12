@@ -1,8 +1,8 @@
 // provider/DSContext.tsx
 import { createContext, useContext } from "react";
-import { DSLocale } from "./types";
+import { DSMessages } from "./types";
 
-const defaultLocale: Required<DSLocale> = {
+const defaultMessages: Required<DSMessages> = {
   clearSelection: "Clear selection",
   showPassword: "Show password",
   hidePassword: "Hide password",
@@ -13,17 +13,17 @@ const defaultLocale: Required<DSLocale> = {
   clearRangeInput: "Clear",
   closeTag: "Close tag",
   closeDialog: "Close dialog",
-  clear: "Clear",
+  
 };
 
 interface DSContextValue {
-  locale: Required<DSLocale>;
+  message: Required<DSMessages>;
 }
 
 export const DSContext = createContext<DSContextValue>({
-  locale: defaultLocale,
+  message: defaultMessages,
 });
 
-export const useDSLocale = () => useContext(DSContext).locale;
+export const useDSMessages = () => useContext(DSContext).message;
 
-export { defaultLocale };
+export { defaultMessages };

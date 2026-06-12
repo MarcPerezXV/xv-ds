@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { GhostIconButton } from "../button";
-import { useDSLocale } from "../../provider/DSContext";
+import { useDSMessages } from "../../provider/DSContext";
 import "./styles.css";
 
 export type TagType = "yellow" | "blue" | "orange";
@@ -14,7 +14,7 @@ export interface TagProps {
 }
 
 export const Tag = ({ label, type, closable, onClose, className }: TagProps) => {
-  const locale = useDSLocale();
+  const messages = useDSMessages();
 
   return (
     <span className={clsx("xv-tag", type && `xv-tag--${type}`, className)}>
@@ -22,8 +22,8 @@ export const Tag = ({ label, type, closable, onClose, className }: TagProps) => 
       {closable && (
         <GhostIconButton
           icon="close"
-          altText={locale.closeTag}
-          description={locale.closeTag}
+          altText={messages.closeTag}
+          description={messages.closeTag}
           size="small"
           onClick={onClose}
         />

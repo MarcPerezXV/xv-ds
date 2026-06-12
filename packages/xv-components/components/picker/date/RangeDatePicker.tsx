@@ -1,11 +1,11 @@
 import { format } from "date-fns";
 import { DayPicker, DateRange } from "react-day-picker";
 import { BaseDatePicker } from "./_base/Base";
-import { usePopover } from "../../hooks/use.popover";
+import { usePopover } from "../../../hooks/use.popover";
 
 import "./range-date-picker.css";
 import clsx from "clsx";
-import { Icon } from "../icon";
+import { Icon } from "../../icon";
 
 export interface DateRangePreset {
   label: string;
