@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { PrimaryIconButton } from "./Button";
+import { GhostIconButton } from "./Button";
 
-const meta: Meta<typeof PrimaryIconButton> = {
-  title: "Components/IconButton/Primary",
-  component: PrimaryIconButton,
+const meta: Meta<typeof GhostIconButton> = {
+  title: "Components/Button/Icon/Ghost",
+  component: GhostIconButton,
   tags: ["autodocs"],
   parameters: { layout: "centered" },
   argTypes: {
@@ -27,13 +27,24 @@ const meta: Meta<typeof PrimaryIconButton> = {
       description: "Tooltip content shown when the button is disabled.",
       if: { arg: "disabled", truthy: true },
     },
+    size: {
+      control: "radio",
+      options: ["small", "medium"],
+      description: "Size of the button.",
+      table: { defaultValue: { summary: "medium" } },
+    },
+    active: {
+      control: "boolean",
+      description: "Active state of the button.",
+      table: { defaultValue: { summary: "false" } },
+    },
     tooltipPosition: {
       control: "radio",
       options: ["top", "bottom", "left", "right"],
       description: "Position of the tooltip relative to the button.",
       table: { defaultValue: { summary: "top" } },
     },
-    size: { table: { disable: true } },
+
     altText: {
       control: "text",
       description: "Accessible label for screen readers.",
@@ -42,7 +53,9 @@ const meta: Meta<typeof PrimaryIconButton> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PrimaryIconButton>;
+type Story = StoryObj<typeof GhostIconButton>;
+
+
 
 export const Default: Story = {
   args: {
@@ -50,6 +63,8 @@ export const Default: Story = {
     altText: "Close",
     description: "",
     tooltipPosition: "top",
+    size: "medium",
+    active: false,
     disabled: false,
     disabledReason: ""
   },

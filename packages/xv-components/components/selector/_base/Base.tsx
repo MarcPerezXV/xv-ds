@@ -5,7 +5,7 @@ import { useFloating, flip, shift, offset, autoUpdate, size } from "@floating-ui
 import { useDSLocale } from "../../../provider/DSContext";
 
 import "./styles.css";
-import { GhostIconButton } from "../../iconButton";
+import { GhostIconButton } from "../../button";
 import { Icon } from "../../icon";
 
 export interface SelectOption {

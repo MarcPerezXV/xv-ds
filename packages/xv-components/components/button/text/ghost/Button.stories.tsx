@@ -1,31 +1,28 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { PrimaryTextButton } from "./Button";
-import { Icon } from "../../icon";
-import { StatusDot } from "../../statusDot/StatusDot";
-import { Avatar } from "../../avatar/Avatar";
+import { GhostButton } from "./Button";
+import { Icon } from "../../../icon";
+import { StatusDot } from "../../../statusDot/StatusDot";
 
 const leadingSlotOptions = {
   icon: <Icon name="clock" size="small" />,
-  avatar: <Avatar size="small"/>
 };
-
-
 
 const trailingSlotOptions = {
   icon: <Icon name="chevronDown" size="small" />,
   statusDot: <StatusDot status="danger" />,
 };
 
-const meta: Meta<typeof PrimaryTextButton> = {
-  title: "Components/TextButton/Primary",
-  component: PrimaryTextButton,
-  parameters: { layout: "centered" },
+
+const meta: Meta<typeof GhostButton> = {
+  title: "Components/Button/Text/Ghost",
+  component: GhostButton,
   tags: ["autodocs"],
+  parameters: {layout: "centered"},
   argTypes: {
     label: {
       control: "text",
       description: "Button label.",
-      table: { defaultValue: { summary: "Button" } },
+      table: { defaultValue: { summary: "Button"}}
     },
     disabled: {
       control: "boolean",
@@ -36,6 +33,11 @@ const meta: Meta<typeof PrimaryTextButton> = {
       control: "text",
       description: "Tooltip content shown when the button is disabled.",
       if: { arg: "disabled", truthy: true },
+    },
+    active: {
+      control: "boolean",
+      description: "Active state of the button.",
+      table: { defaultValue: { summary: "false" } },
     },
     leadingSlot: {
       control: "select",
@@ -53,14 +55,16 @@ const meta: Meta<typeof PrimaryTextButton> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PrimaryTextButton>;
+type Story = StoryObj<typeof GhostButton>;
 
 export const Default: Story = {
   args: {
     label: "Button",
     leadingSlot: "",
     trailingSlot: "",
+    active: false,
     disabled: false,
     disabledReason: ""
-  },
+    
+  }
 };

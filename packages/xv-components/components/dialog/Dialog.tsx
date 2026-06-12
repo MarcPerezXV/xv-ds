@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useRef, createContext, useContext } from "react";
 import { clsx } from "clsx";
-import { GhostIconButton } from "../iconButton";
+import { GhostIconButton } from "../button";
 import { Icon } from "../icon";
 import { useDSLocale } from "../../provider/DSContext";
 import "./styles.css";

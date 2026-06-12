@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { GhostIconButton } from "./Button";
+import { DangerIconButton } from "./Button";
 
-const meta: Meta<typeof GhostIconButton> = {
-  title: "Components/IconButton/Ghost",
-  component: GhostIconButton,
+const meta: Meta<typeof DangerIconButton> = {
+  title: "Components/Button/Icon/Danger",
+  component: DangerIconButton,
+  parameters: { layout: "centered", docs: {controls: { sort: "none"}} },
   tags: ["autodocs"],
-  parameters: { layout: "centered" },
   argTypes: {
     icon: {
       control: "select",
@@ -13,6 +13,13 @@ const meta: Meta<typeof GhostIconButton> = {
       description: "The icon to display.",
       table: { type: { summary: "IconName" } },
     },
+
+     altText: {
+      control: "text",
+      description: "Accessible label for screen readers.",
+    },
+
+
     description: {
       control: "text",
       description: "Tooltip content shown on hover.",
@@ -20,23 +27,14 @@ const meta: Meta<typeof GhostIconButton> = {
     disabled: {
       control: "boolean",
       description: "Disables the button.",
-      table: { defaultValue: { summary: "false" } },
+      table: {
+        defaultValue: { summary: "false" },
+      },
     },
     disabledReason: {
       control: "text",
       description: "Tooltip content shown when the button is disabled.",
       if: { arg: "disabled", truthy: true },
-    },
-    size: {
-      control: "radio",
-      options: ["small", "medium"],
-      description: "Size of the button.",
-      table: { defaultValue: { summary: "medium" } },
-    },
-    active: {
-      control: "boolean",
-      description: "Active state of the button.",
-      table: { defaultValue: { summary: "false" } },
     },
     tooltipPosition: {
       control: "radio",
@@ -44,18 +42,13 @@ const meta: Meta<typeof GhostIconButton> = {
       description: "Position of the tooltip relative to the button.",
       table: { defaultValue: { summary: "top" } },
     },
-
-    altText: {
-      control: "text",
-      description: "Accessible label for screen readers.",
-    },
+    size: { table: { disable: true } },
+  
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof GhostIconButton>;
-
-
+type Story = StoryObj<typeof DangerIconButton>;
 
 export const Default: Story = {
   args: {
@@ -63,8 +56,6 @@ export const Default: Story = {
     altText: "Close",
     description: "",
     tooltipPosition: "top",
-    size: "medium",
-    active: false,
     disabled: false,
     disabledReason: ""
   },

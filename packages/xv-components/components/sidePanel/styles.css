@@ -1,0 +1,99 @@
+.xv-side-panel {
+    display: flex;
+    font: var(--text__body-large);
+    gap: 1px;
+    background-color: var(--color__background-04);
+}
+
+.xv-side-panel--left {
+    border-right: 1px solid var(--color__border__subtle);
+}
+
+.xv-side-panel--right {
+    border-left: 1px solid var(--color__border__subtle);
+}
+
+.xv-side-panel__header {
+    background-color: var(--color__background-02);
+    padding: var(--spacing__02);
+    padding-left: var(--spacing__04);
+    font: var(--text__body-medium);
+    border-bottom: 1px solid var(--color__border__subtle);
+    min-height: var(--size__08);
+    display: flex;
+    align-items: center;
+    color: var(--color__text__brighter-01);
+}
+
+.xv-side-panel__body {
+    flex-basis: clamp(12.5rem, 8.649rem + 16.432vw, 23.438rem);
+    flex-shrink: 0;
+
+    background-color: var(--color__background-01);
+
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 0;
+
+    transition: flex-basis 250ms ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.xv-side-panel__content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.xv-side-panel__content-inner {
+    min-height: 100%;
+    height: auto;
+
+}
+
+.xv-side-panel__closable-area {
+    padding: var(--spacing__02);
+    background-color: var(--color__background-01);
+}
+
+.xv-side-panel__closable-area--right {
+    order: -1;
+}
+
+.xv-side-panel .xv-side-panel__toggle-button {
+    height: 100%;
+}
+
+.xv-side-panel__toggle-button > svg {
+    transition: transform 250ms ease;
+}
+
+/* LEFT */
+
+.xv-side-panel__closable-area--left .xv-side-panel__toggle-button > svg {
+    transform: rotate(0deg);
+}
+
+.xv-side-panel--collapsed
+.xv-side-panel__closable-area--left
+.xv-side-panel__toggle-button > svg {
+    transform: rotate(180deg);
+}
+
+/* RIGHT */
+
+.xv-side-panel__closable-area--right .xv-side-panel__toggle-button > svg {
+    transform: rotate(180deg);
+}
+
+.xv-side-panel--collapsed
+.xv-side-panel__closable-area--right
+.xv-side-panel__toggle-button > svg {
+    transform: rotate(0deg);
+}
+
+/* COLLAPSED */
+
+.xv-side-panel--collapsed .xv-side-panel__body {
+    flex-basis: 0;
+}
