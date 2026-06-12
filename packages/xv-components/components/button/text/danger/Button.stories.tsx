@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DangerTextButton } from "./Button";
-import { Icon } from "../../icon";
-import { StatusDot } from "../../statusDot/StatusDot";
+import { DangerButton } from "./Button";
+import { Icon } from "../../../icon";
+import { StatusDot } from "../../../statusDot/StatusDot";
 
 const leadingSlotOptions = {
   icon: <Icon name="clock" size="small" />,
@@ -12,9 +12,9 @@ const trailingSlotOptions = {
   statusDot: <StatusDot status="info" />,
 };
 
-const meta: Meta<typeof DangerTextButton> = {
-  title: "Components/TextButton/Danger",
-  component: DangerTextButton,
+const meta: Meta<typeof DangerButton> = {
+  title: "Components/Button/Text/Danger",
+  component: DangerButton,
   parameters: {layout: "centered"},
   tags: ["autodocs"],
   argTypes: {
@@ -49,7 +49,7 @@ const meta: Meta<typeof DangerTextButton> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DangerTextButton>;
+type Story = StoryObj<typeof DangerButton>;
 
 export const Default: Story = {
   args: {

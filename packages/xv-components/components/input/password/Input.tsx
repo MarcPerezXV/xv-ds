@@ -1,6 +1,6 @@
 import { forwardRef, useState } from "react";
 import { BaseInput, BaseInputProps } from "../_base/Base";
-import { GhostIconButton } from "../../iconButton";
+import { GhostIconButton } from "../../button";
 import { useDSLocale } from "../../../provider/DSContext";
 
 export interface PasswordInputProps extends Omit<BaseInputProps, "type"> {}

@@ -1,18 +1,30 @@
 import "./styles.css";
 import { forwardRef, ReactNode, ButtonHTMLAttributes } from "react";
-import { Tooltip } from "../../tooltip/Tooltip";
+import { Tooltip } from "../../../tooltip/Tooltip";
 import clsx from "clsx";
 
-export interface BaseTextButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface BaseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   leadingSlot?: ReactNode;
   label: string;
   trailingSlot?: ReactNode;
   disabledReason?: string;
 }
 
-export const BaseTextButton = forwardRef<
+
+const LeadingSlotButton = ({children}:{children: ReactNode}) => {
+  <div className="xv-text-button__slot">{children}</div>
+}
+
+const TrailingSlotButton = ({children}:{children: ReactNode}) => {
+  <div className="xv-text-button__slot">{children}</div>
+}
+
+LeadingSlotButton.displayName = "LeadingSlotButton";
+TrailingSlotButton.displayName = "railingSlotButton";
+
+export const BaseButton = forwardRef<
   HTMLButtonElement,
-  BaseTextButtonProps
+  BaseButtonProps
 >(
   (
     {
@@ -57,4 +69,4 @@ export const BaseTextButton = forwardRef<
   },
 );
 
-BaseTextButton.displayName = "BaseTextButton";
+BaseButton.displayName = "BaseButton";

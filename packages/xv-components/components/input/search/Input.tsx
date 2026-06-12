@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { BaseInput, BaseInputProps } from "../_base/Base";
 import { Icon } from "../../icon";
-import { GhostIconButton } from "../../iconButton";
+import { GhostIconButton } from "../../button";
 import { useDSLocale } from "../../../provider/DSContext";
 
 export interface SearchInputProps extends Omit<BaseInputProps, "type"> {

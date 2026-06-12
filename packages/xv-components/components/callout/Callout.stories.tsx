@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Callout } from "./Callout";
-import { GhostTextButton } from "../textButton";
+import { GhostButton } from "../button";
 import { Icon } from "../icon";
 
 const meta: Meta<typeof Callout> = {
@@ -38,8 +38,8 @@ export const WithActions: Story = {
   render: (args) => (
     <Callout {...args}>
       <Callout.Actions>
-        <GhostTextButton label="Action 01" leadingSlot={<Icon name="clock" size="small" />} />
-        <GhostTextButton label="Action 02" leadingSlot={<Icon name="clock" size="small" />} />
+        <GhostButton label="Action 01" leadingSlot={<Icon name="clock" size="small" />} />
+        <GhostButton label="Action 02" leadingSlot={<Icon name="clock" size="small" />} />
       </Callout.Actions>
     </Callout>
   ),

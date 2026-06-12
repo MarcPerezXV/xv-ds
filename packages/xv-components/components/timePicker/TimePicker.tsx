@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { GhostIconButton } from "../iconButton";
+import { GhostIconButton } from "../button";
 import { useDSLocale } from "../../provider/DSContext";
 import { usePopover } from "../../hooks/use.popover";
 

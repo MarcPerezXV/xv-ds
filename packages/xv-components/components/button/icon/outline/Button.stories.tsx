@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { OutlineIconButton } from "./Button";
 
 const meta: Meta<typeof OutlineIconButton> = {
-  title: "Components/IconButton/Outline",
+  title: "Components/Button/Icon/Outline",
   component: OutlineIconButton,
   tags: ["autodocs"],
   parameters: { layout: "centered" },

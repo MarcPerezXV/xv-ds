@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Dialog, DialogProps } from "./Dialog";
-import { PrimaryTextButton } from "../textButton/primary/Button";
-import { GhostTextButton } from "../textButton";
+import { PrimaryButton } from "../button";
+import { GhostButton } from "../button";
 import { useState } from "react";
 
 const meta: Meta<DialogStoryArgs> = {
@@ -40,7 +40,7 @@ export const Default: Story = {
     const [open, setOpen] = useState(false);
     return (
       <>
-        <GhostTextButton label="Open dialog" onClick={() => setOpen(true)} />
+        <GhostButton label="Open dialog" onClick={() => setOpen(true)} />
         <Dialog type={args.type} open={open} onClose={() => setOpen(false)}>
           <Dialog.Header title="Session expired" />
           <Dialog.Content
@@ -48,8 +48,8 @@ export const Default: Story = {
             icon={args.showIcon}
           />
           <Dialog.Actions>
-            <GhostTextButton label="Cancel" onClick={() => setOpen(false)} />
-            <PrimaryTextButton label="Sign in" onClick={() => setOpen(false)} />
+            <GhostButton label="Cancel" onClick={() => setOpen(false)} />
+            <PrimaryButton label="Sign in" onClick={() => setOpen(false)} />
           </Dialog.Actions>
         </Dialog>
       </>

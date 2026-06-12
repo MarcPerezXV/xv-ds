@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DangerIconButton } from "./Button";
+import { PrimaryIconButton } from "./Button";
 
-const meta: Meta<typeof DangerIconButton> = {
-  title: "Components/IconButton/Danger",
-  component: DangerIconButton,
-  parameters: { layout: "centered", docs: {controls: { sort: "none"}} },
+const meta: Meta<typeof PrimaryIconButton> = {
+  title: "Components/Button/Icon/Primary",
+  component: PrimaryIconButton,
   tags: ["autodocs"],
+  parameters: { layout: "centered" },
   argTypes: {
     icon: {
       control: "select",
@@ -13,13 +13,6 @@ const meta: Meta<typeof DangerIconButton> = {
       description: "The icon to display.",
       table: { type: { summary: "IconName" } },
     },
-
-     altText: {
-      control: "text",
-      description: "Accessible label for screen readers.",
-    },
-
-
     description: {
       control: "text",
       description: "Tooltip content shown on hover.",
@@ -27,9 +20,7 @@ const meta: Meta<typeof DangerIconButton> = {
     disabled: {
       control: "boolean",
       description: "Disables the button.",
-      table: {
-        defaultValue: { summary: "false" },
-      },
+      table: { defaultValue: { summary: "false" } },
     },
     disabledReason: {
       control: "text",
@@ -43,12 +34,15 @@ const meta: Meta<typeof DangerIconButton> = {
       table: { defaultValue: { summary: "top" } },
     },
     size: { table: { disable: true } },
-  
+    altText: {
+      control: "text",
+      description: "Accessible label for screen readers.",
+    },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof DangerIconButton>;
+type Story = StoryObj<typeof PrimaryIconButton>;
 
 export const Default: Story = {
   args: {

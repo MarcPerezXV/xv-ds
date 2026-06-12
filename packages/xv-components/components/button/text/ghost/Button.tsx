@@ -1,15 +1,15 @@
-import { BaseTextButton, BaseTextButtonProps } from "../_base/Button";
+import { BaseButton, BaseButtonProps } from "../_base/Button";
 import { forwardRef } from "react";
 import clsx from "clsx";
 import "./styles.css";
 
-export interface GhostButtonProps extends BaseTextButtonProps {
+export interface GhostButtonProps extends BaseButtonProps {
   active?: boolean;
 }
 
-export const GhostTextButton = forwardRef<HTMLButtonElement, GhostButtonProps>(
+export const GhostButton = forwardRef<HTMLButtonElement, GhostButtonProps>(
   ({ active, className, ...props }, ref) => (
-    <BaseTextButton
+    <BaseButton
       ref={ref}
       {...props}
       className={clsx(
@@ -21,4 +21,4 @@ export const GhostTextButton = forwardRef<HTMLButtonElement, GhostButtonProps>(
   )
 );
 
-GhostTextButton.displayName = "GhostTextButton";
+GhostButton.displayName = "GhostButton";

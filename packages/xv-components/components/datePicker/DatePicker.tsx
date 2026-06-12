@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import { clsx } from "clsx";
 
-import { GhostIconButton } from "../iconButton";
+import { GhostIconButton } from "../button";
 import { ScrollColumn } from "../_shared/ScrollColumn";
 import { useDSLocale } from "../../provider/DSContext";
 import { usePopover } from "../../hooks/use.popover";

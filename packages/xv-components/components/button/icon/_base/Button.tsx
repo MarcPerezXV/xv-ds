@@ -2,11 +2,11 @@ import { forwardRef, ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 
 
-import { Tooltip } from "../../tooltip/Tooltip";
+import { Tooltip } from "../../../tooltip/Tooltip";
 
 import "./styles.css";
-import { IconName } from "../../icon/type";
-import { Icon } from "../../icon/Icon";
+import { IconName } from "../../../icon/type";
+import { Icon } from "../../../icon/Icon";
 
 export interface BaseIconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: IconName;
