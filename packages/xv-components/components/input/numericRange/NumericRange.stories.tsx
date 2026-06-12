@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { RangeInput, RangeValue } from "./RangePicker";
+import { NumericRangeInput, RangeValue } from "./NumericRange";
 import { useState } from "react";
 
-const meta: Meta<typeof RangeInput> = {
-  title: "Components/RangePicker",
-  component: RangeInput,
+const meta: Meta<typeof NumericRangeInput> = {
+  title: "Components/Input/NumericRange",
+  component: NumericRangeInput,
   tags: ["autodocs"],
   parameters: { layout: "centered" },
   argTypes: {
@@ -48,12 +48,12 @@ const meta: Meta<typeof RangeInput> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RangeInput>;
+type Story = StoryObj<typeof NumericRangeInput>;
 
 export const Default: Story = {
   render: (args) => {
     const [value, setValue] = useState<RangeValue | undefined>(undefined);
-    return <RangeInput {...args} value={value} onChange={setValue} />;
+    return <NumericRangeInput {...args} value={value} onChange={setValue} />;
   },
   args: {
     label: "Range picker",

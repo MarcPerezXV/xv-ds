@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { clsx } from "clsx";
-import { useDSLocale } from "../../../provider/DSContext";
-import { usePopover } from "../../../hooks/use.popover";
+import { useDSMessages } from "../../../../provider/DSContext";
+import { usePopover } from "../../../../hooks/use.popover";
 
 import "./styles.css";
-import { GhostIconButton } from "../../button";
-import { Icon } from "../../icon";
+import { GhostIconButton } from "../../../button";
+import { Icon } from "../../../icon";
 
 export interface BaseDatePickerProps {
   label: string;
@@ -42,7 +42,7 @@ export const BaseDatePicker = ({
   floatingStyles,
   children,
 }: BaseDatePickerProps) => {
-  const locale = useDSLocale();
+  const messages = useDSMessages();
 
   const descriptionId = description ? "date-picker-description" : undefined;
   const errorId = error ? "date-picker-error" : undefined;
@@ -85,8 +85,8 @@ export const BaseDatePicker = ({
           <div className="xv-date-picker__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={locale.clearRange}
-              description={locale.clearRange}
+              altText={messages.clearRange}
+              description={messages.clearRange}
               size="small"
               onClick={(e) => {
                 e.stopPropagation();

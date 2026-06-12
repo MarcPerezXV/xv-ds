@@ -1,13 +1,13 @@
 import { forwardRef } from "react";
 import { BaseInput, BaseInputProps } from "../_base/Base";
 
-export interface NumberInputProps extends Omit<BaseInputProps, "type"> {
+export interface NumericInputProps extends Omit<BaseInputProps, "type"> {
   min?: number;
   max?: number;
   step?: number;
 }
 
-export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
+export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(
   ({ min, max, step, className, ...props }, ref) => {
     return (
       <BaseInput
@@ -23,4 +23,4 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
   }
 );
 
-NumberInput.displayName = "NumberInput";
+NumericInput.displayName = "NumberInput";

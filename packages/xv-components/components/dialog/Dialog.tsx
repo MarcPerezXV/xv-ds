@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useRef, createContext, useContext } from "react";
 import { clsx } from "clsx";
 import { GhostIconButton } from "../button";
 import { Icon } from "../icon";
-import { useDSLocale } from "../../provider/DSContext";
+import { useDSMessages } from "../../provider/DSContext";
 import "./styles.css";
 
 export type DialogType = "informative" | "warning" | "error";
@@ -28,14 +28,14 @@ const iconMap: Record<DialogType, string> = {
 
 const DialogHeader = ({ title }: { title: string }) => {
   const { onClose } = useDialogContext();
-  const locale = useDSLocale();
+  const messages = useDSMessages();
 
   return (
     <div className="xv-dialog__header">
       <span className="xv-dialog__title">{title}</span>
       <GhostIconButton
         icon="close"
-        altText={locale.closeDialog}
+        altText={messages.closeDialog}
         onClick={onClose}
       />
     </div>

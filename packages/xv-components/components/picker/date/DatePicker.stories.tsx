@@ -4,9 +4,9 @@ import { useState } from "react";
 import { startOfToday, startOfTomorrow, addDays } from "date-fns";
 
 const meta: Meta<typeof DatePicker> = {
-  title: "Components/DatePicker/Single",
+  title: "Components/Picker/Date",
   component: DatePicker,
-  tags: ["autodocs"],
+  tags: ["hidden"],
   decorators: [
   (Story) => (
     <div style={{ padding: "24px" }}>

@@ -2,15 +2,15 @@ import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import { clsx } from "clsx";
 
-import { GhostIconButton } from "../button";
-import { ScrollColumn } from "../_shared/ScrollColumn";
-import { useDSLocale } from "../../provider/DSContext";
-import { usePopover } from "../../hooks/use.popover";
+import { GhostIconButton } from "../../button";
+import { ScrollColumn } from "../../_shared/ScrollColumn";
+import { useDSMessages } from "../../../provider/DSContext";
+import { usePopover } from "../../../hooks/use.popover";
 
 import "react-day-picker/dist/style.css";
 import "./date-picker.css";
-import "../timePicker/styles.css";
-import { Icon } from "../icon";
+import "../time/styles.css";
+import { Icon } from "../../icon";
 
 export interface TimeValue {
   hours: number;
@@ -77,7 +77,7 @@ export const DatePicker = ({
   presets,
 }: DatePickerProps) => {
   const { isOpen, toggle, close, wrapperRef, refs, floatingStyles } = usePopover();
-  const locale = useDSLocale();
+  const messages = useDSMessages();
 
   const defaultPlaceholder = showTime ? "Select date and time" : "Select date";
 
@@ -176,8 +176,8 @@ export const DatePicker = ({
           <div className="xv-date-picker__clear-wrapper">
             <GhostIconButton
               icon="close"
-              altText={locale.clearDate}
-              description={locale.clearDate}
+              altText={messages.clearDate}
+              description={messages.clearDate}
               size="small"
               onClick={(e) => {
                 e.stopPropagation();

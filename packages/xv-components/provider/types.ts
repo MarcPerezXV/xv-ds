@@ -1,5 +1,5 @@
 // provider/types.ts
-export interface DSLocale {
+export interface DSMessages {
   // Select
   clearSelection?: string;
   
@@ -24,6 +24,5 @@ export interface DSLocale {
   // Dialog
   closeDialog?: string;
   
-  // IconButton
-  clear?: string;
+
 }

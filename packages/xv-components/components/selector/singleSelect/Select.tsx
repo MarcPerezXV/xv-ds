@@ -1,6 +1,6 @@
 import { useSelect } from "downshift";
 import { BaseSelect, type SelectOption } from "../_base/Base";
-import { useDSLocale } from "../../../provider/DSContext";
+
 
 interface SingleSelectProps {
   label: string;
@@ -21,7 +21,7 @@ export const SingleSelect = ({
   disabled,
   error,
 }: SingleSelectProps) => {
-  const locale = useDSLocale();
+
   const selectedItem = options.find((item) => item.id === value) ?? null;
 
   const {

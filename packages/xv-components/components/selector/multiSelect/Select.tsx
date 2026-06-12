@@ -1,7 +1,7 @@
 import { useSelect } from "downshift";
 import { BaseSelect, type SelectOption } from "../_base/Base";
 import { CheckboxControl } from "../../checkbox/CheckboxControl";
-import { useDSLocale } from "../../../provider/DSContext";
+
 
 interface MultiSelectProps {
   label: string;
@@ -22,7 +22,7 @@ export const MultiSelect = ({
   disabled,
   error,
 }: MultiSelectProps) => {
-  const locale = useDSLocale();
+  
   const selectedItems = options.filter((item) => value.includes(item.id));
 
   const {
