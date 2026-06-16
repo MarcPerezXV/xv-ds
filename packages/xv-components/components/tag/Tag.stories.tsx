@@ -13,7 +13,7 @@ const meta: Meta<typeof Tag> = {
     },
     type: {
       control: "radio",
-      options: ["redHigh", "redMedium", "redLow", "yellow", "blue", "orange", "green", "gray"],
+      options: ["red-high", "red-med", "red-low", "yellow", "blue", "orange", "green", "gray"],
       description: "Visual style of the tag.",
     },
     closable: {

@@ -1,8 +1,13 @@
 .xv-side-panel {
+    --flex-basis: clamp(12.5rem, 8.649rem + 16.432vw, 23.438rem);
     display: flex;
     font: var(--text__body-large);
-    gap: 1px;
-    background-color: var(--color__background-04);
+    
+    background-color: var(--color__background-03);
+
+    &:not(.xv-side-panel--collapsed) {
+        gap: 1px;
+    }
 }
 
 .xv-side-panel--left {
@@ -26,7 +31,7 @@
 }
 
 .xv-side-panel__body {
-    flex-basis: clamp(12.5rem, 8.649rem + 16.432vw, 23.438rem);
+    flex-basis: var(--flex-basis);
     flex-shrink: 0;
 
     background-color: var(--color__background-01);
@@ -43,6 +48,7 @@
 .xv-side-panel__content {
     flex: 1;
     overflow-y: auto;
+    min-width: var(--flex-basis);
 }
 
 .xv-side-panel__content-inner {
@@ -97,3 +103,6 @@
 .xv-side-panel--collapsed .xv-side-panel__body {
     flex-basis: 0;
 }
+
+
+

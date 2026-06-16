@@ -3,7 +3,7 @@ import { GhostIconButton } from "../button";
 import { useDSMessages } from "../../provider/DSContext";
 import "./styles.css";
 
-export type TagType = "yellow" | "blue" | "orange";
+export type TagType = "yellow" | "blue" | "orange" | "green" | "red-high" | "red-med" | "red-low";
 
 export interface TagProps {
   label: string;

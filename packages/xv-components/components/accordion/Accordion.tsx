@@ -43,7 +43,7 @@ const AccordionItem = ({ value, title, children, className }: AccordionItemProps
   };
 
   return (
-    <div className={clsx("xv-accordion__item", isOpen && "xv-accordion__item--open", className)}>
+    <div className={clsx("xv-accordion__item", isOpen && "xv-accordion__item--open")}>
       <button
         type="button"
         className="xv-accordion__trigger"
@@ -60,7 +60,9 @@ const AccordionItem = ({ value, title, children, className }: AccordionItemProps
 
       <div className="xv-accordion__content-wrapper">
         <div className="xv-accordion__content">
-          {children}
+          <div className={clsx("xv-accordion__content-inner", className)}>
+            {children}
+          </div>
         </div>
       </div>
     </div>
