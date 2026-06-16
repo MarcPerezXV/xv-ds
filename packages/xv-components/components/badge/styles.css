@@ -2,16 +2,15 @@
     min-width: var(--size__04);
     height: var(--size__04);
     background: linear-gradient(
-        oklch(from var(--badge-color) l c h / 12%),
-        oklch(from var(--badge-color) l c h / 12%)
-    ), var(--color__background-01);
+        oklch(from var(--badge-color) l c h / 4%),
+        oklch(from var(--badge-color) l c h / 4%)
+    ), var(--color__background-03);
         
     border: 1px solid var(--badge-color);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--border-radius__01);
-    box-shadow: 0 0 0 1px var(--color__focus-ring__inner), 0 0 0 3px oklch(from var(--badge-color) l c h / .4);
     font: var(--text__body-small__bold);
     color:  var(--color__text__base);
     position: relative;
