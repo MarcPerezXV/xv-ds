@@ -1,10 +1,10 @@
 .xv-status-dot {
   display: inline-flex;
-  inline-size: var(--xv-status-dot-size, 8px);
-  block-size: var(--xv-status-dot-size, 8px);
-  position: var(--xv-status-dot-position, static);
+  inline-size: 8px;
+  block-size: 8px;
   border-radius: var(--border-radius__full);
-  outline: 1px solid var(--color__background-01);
+  box-shadow: 0 0 0 1px var(--color__focus-ring__inner), 0 0 0 3px oklch(from var(--statusDot-color) l c h / .4);
+  background-color: var(--statusDot-color);
 }
 
 .xv-status-dot--neutral {
@@ -14,18 +14,34 @@
   );
 }
 
-.xv-status-dot--info {
-  background-color: var(--color__system-feedback__blue);
+.xv-status-dot--gray {
+  --statusDot-color: var(--color__background-04__inverted);
 }
 
-.xv-status-dot--success {
-  background-color: var(--color__system-feedback__green);
+.xv-status-dot--blue {
+  --statusDot-color: var(--color__system-feedback__blue);
 }
 
-.xv-status-dot--warning {
-  background-color: var(--color__system-feedback__yellow);
+.xv-status-dot--green {
+  --statusDot-color: var(--color__system-feedback__green);
 }
 
-.xv-status-dot--danger {
-  background-color: var(--color__system-feedback__red-high);
+.xv-status-dot--yellow {
+  --statusDot-color: var(--color__system-feedback__yellow);
+}
+
+.xv-status-dot--orange {
+  --statusDot-color: var(--color__system-feedback__orange);
+}
+
+.xv-status-dot--red-high {
+  --statusDot-color: var(--color__system-feedback__red-high);
+}
+
+.xv-status-dot--red-med {
+  --statusDot-color: var(--color__system-feedback__red-medium);
+}
+
+.xv-status-dot--red-low {
+  --statusDot-color: var(--color__system-feedback__red-low);
 }

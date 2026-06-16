@@ -3,7 +3,7 @@ import { Icon, IconName } from "../icon";
 import './styles.css'
 
 
-type BadgeColor = "red-high" | "red-medium" | "red-low" | "yellow" | "orange" | "green" | "blue" 
+type BadgeColor = "red-high" | "red-med" | "red-low" | "yellow" | "orange" | "green" | "blue" 
 
 type BadgeProps = {
     color: BadgeColor

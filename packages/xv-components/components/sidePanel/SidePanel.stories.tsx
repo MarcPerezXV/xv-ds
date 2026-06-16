@@ -39,7 +39,6 @@ export const Default: Story = {
         <SidePanel.Header title="Frequently Asked Questions" />  
 
         <SidePanel.Content className="xv-side-panel__storybook">
-
           Content goes here
         </SidePanel.Content>
       </SidePanel>
@@ -74,6 +73,7 @@ export const Default: Story = {
             display: flex;
             align-items: center;
             justify-content: center;
+            
             padding: 8px;            
 
       }
