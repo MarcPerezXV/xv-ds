@@ -40,59 +40,7 @@ export const Default: Story = {
 
         <SidePanel.Content className="xv-side-panel__storybook">
 
-          <Accordion defaultValue="1" className="xv-accordion__storybook">
-  <Accordion.Item
-    value="1"
-    title="Account settings"
-    className="xv-accordion-item__storybook"
-  >
-    <p style={{ margin: 0 }}>
-      Manage your account preferences and personal information from a single
-      place. Changes are saved automatically and applied across the application.
-    </p>
-
-    <p style={{ margin: 0 }}>
-      You can update details such as your display name, preferred language, and
-      notification preferences. Some settings may require additional permissions
-      depending on your role.
-    </p>
-  </Accordion.Item>
-
-  <Accordion.Item
-    value="2"
-    title="Notifications"
-    className="xv-accordion-item__storybook"
-  >
-    <p style={{ margin: 0 }}>
-      Stay informed about important updates, assignments, and activity related
-      to your work. Notification preferences can be customized at any time.
-    </p>
-
-    <p style={{ margin: 0 }}>
-      Choose how you want to receive alerts, including email, in-app
-      notifications, or both. Disabling a notification type only affects future
-      messages.
-    </p>
-  </Accordion.Item>
-
-  <Accordion.Item
-    value="3"
-    title="Privacy and security"
-    className="xv-accordion-item__storybook"
-  >
-    <p style={{ margin: 0 }}>
-      Your privacy and security settings help protect access to your account and
-      personal information. Review these options regularly to ensure they meet
-      your needs.
-    </p>
-
-    <p style={{ margin: 0 }}>
-      Features such as two-factor authentication, active session management, and
-      password updates are available from this section. Some security changes
-      may require re-authentication before taking effect.
-    </p>
-  </Accordion.Item>
-</Accordion>
+          Content goes here
         </SidePanel.Content>
       </SidePanel>
     );
@@ -124,20 +72,11 @@ export const Default: Story = {
         `.xv-side-panel__storybook {
             
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
             padding: 8px;            
 
       }
-            .xv-accordion-item__storybook{
-              display: flex;
-              flex-direction: column;
-              gap: 12px;
-              padding: 12px;
-              
-
-              
-            }
 
         `
       }
