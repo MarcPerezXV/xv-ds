@@ -3,6 +3,7 @@ import { PrimaryButton } from "./Button";
 import { Icon } from "../../../icon";
 import { StatusDot } from "../../../statusDot/StatusDot";
 import { Avatar } from "../../../avatar/Avatar";
+import { Badge } from "../../../badge/Badge";
 
 const leadingSlotOptions = {
   icon: <Icon name="clock" size="small" />,
@@ -13,7 +14,8 @@ const leadingSlotOptions = {
 
 const trailingSlotOptions = {
   icon: <Icon name="chevronDown" size="small" />,
-  statusDot: <StatusDot status="danger" />,
+  statusDot: <StatusDot tone="red-high" />,
+
 };
 
 const meta: Meta<typeof PrimaryButton> = {

@@ -7,11 +7,11 @@ const meta: Meta<typeof StatusDot> = {
   tags: ["autodocs"],
   parameters: { layout: "centered" },
   argTypes: {
-    status: {
+    tone: {
       control: "radio",
-      options: ["neutral", "info", "success", "warning", "danger"],
+      options: ["gray", "blue", "green", "yellow", "orange", "red-high", "red-med", "red-low"],
       description: "Visual status of the dot.",
-      table: { defaultValue: { summary: "neutral" } },
+      table: { defaultValue: { summary: "gray" } },
     },
   },
 };
@@ -21,6 +21,6 @@ type Story = StoryObj<typeof StatusDot>;
 
 export const Default: Story = {
   args: {
-    status: "neutral",
+    tone: "gray",
   },
 };

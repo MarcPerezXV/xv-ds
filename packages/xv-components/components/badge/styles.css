@@ -1,7 +1,10 @@
 .xv-badge {
     min-width: var(--size__04);
     height: var(--size__04);
-    background: oklch(from var(--badge-color) l c h / 12%);
+    background: linear-gradient(
+        oklch(from var(--badge-color) l c h / 12%),
+        oklch(from var(--badge-color) l c h / 12%)
+    ), var(--color__background-01);
         
     border: 1px solid var(--badge-color);
     display: flex;

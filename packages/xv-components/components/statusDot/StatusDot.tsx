@@ -2,12 +2,12 @@ import { clsx } from "clsx";
 import "./styles.css";
 
 export interface StatusDotProps {
-  status?: "neutral" | "info" | "success" | "warning" | "danger";
+  tone?: "red-high" | "red-med" | "red-low" | "green" | "yellow" | "orange" | "blue" | "gray";
 }
 
-export const StatusDot = ({ status = "neutral" }: StatusDotProps) => {
+export const StatusDot = ({ tone = "gray" }: StatusDotProps) => {
   return (
-    <span className={clsx("xv-status-dot", `xv-status-dot--${status}`)} />
+    <span className={clsx("xv-status-dot", `xv-status-dot--${tone}`)} />
   );
 };
 
