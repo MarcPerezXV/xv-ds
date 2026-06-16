@@ -1,7 +1,7 @@
 .xv-tabs {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--gap__01);
 }
 
 .xv-tab {
@@ -32,7 +32,7 @@
   }
 
   &:hover {
-    --xv-tabs__tab-status-color: var(--color__surface-layer-03);
+    --xv-tabs__tab-status-color: oklch(from var(--color__border__normal) l c h / .4);
   }
 
   &:focus-visible {

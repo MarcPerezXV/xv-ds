@@ -5,11 +5,11 @@
   padding-left: var(--spacing__03);
   padding-right: var(--spacing__02);
   height: var(--size__06);
-  border-radius: var(--border-radius__03);
-  background-color: oklch(from var(--tag-color) l c h / .08);
+  border-radius: var(--border-radius__full);
+  background-color: oklch(from var(--tag-color) l c h / .24);
   font: var(--text__body-medium);
   color: var(--color__text__base);
-  border: 1px solid oklch(from var(--tag-color) l c h / .6);
+  border: 1px solid oklch(from var(--tag-color) l c h / .40);
 }
 
 .xv-tag__label {
@@ -17,6 +17,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: var(--spacing__02);
+  
 }
 
 .xv-tag--yellow {
