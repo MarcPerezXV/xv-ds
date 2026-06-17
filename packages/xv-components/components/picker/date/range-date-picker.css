@@ -18,7 +18,7 @@
 .xv-date-picker__popover .rdp-selected.rdp-range_middle .rdp-day_button {
   background-color: transparent;
   color: var(--color__text__base);
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
 
   &:hover {
     background-color: var(--color__surface-layer-01);

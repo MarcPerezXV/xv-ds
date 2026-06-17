@@ -1,18 +1,18 @@
 :root {
 
-        --color__surface-layer-01: light-dark(oklch(from var(--color__gray-400) l c h / 0.08),
+        --color__surface-layer-01: light-dark(oklch(from var(--color__slate-100) l c h / 0.08),
                         oklch(from var(--color__white) l c h / 0.08));
 
-        --color__surface-layer-02: light-dark(oklch(from var(--color__gray-400) l c h / 0.12),
+        --color__surface-layer-02: light-dark(oklch(from var(--color__slate-100) l c h / 0.12),
                         oklch(from var(--color__white) l c h / 0.12));
 
-        --color__surface-layer-03: light-dark(oklch(from var(--color__gray-400) l c h / 0.20),
+        --color__surface-layer-03: light-dark(oklch(from var(--color__slate-100) l c h / 0.20),
                         oklch(from var(--color__white) l c h / 0.20));
 
-        --color__surface-layer-01__inverted: light-dark(oklch(from var(--color__white) l c h / 0.08), oklch(from var(--color__gray-400) l c h / 0.08));
+        --color__surface-layer-01__inverted: light-dark(oklch(from var(--color__white) l c h / 0.08), oklch(from var(--color__slate-100) l c h / 0.08));
 
-        --color__surface-layer-02__inverted: light-dark(oklch(from var(--color__white) l c h / 0.12), oklch(from var(--color__gray-400) l c h / 0.12));
+        --color__surface-layer-02__inverted: light-dark(oklch(from var(--color__white) l c h / 0.12), oklch(from var(--color__slate-100) l c h / 0.12));
 
-        --color__surface-layer-03__inverted: light-dark(oklch(from var(--color__white) l c h / 0.20), oklch(from var(--color__gray-400) l c h / 0.20));
+        --color__surface-layer-03__inverted: light-dark(oklch(from var(--color__white) l c h / 0.20), oklch(from var(--color__slate-100) l c h / 0.20));
 
 }

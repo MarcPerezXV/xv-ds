@@ -2,12 +2,12 @@
     background-color: transparent;
     outline: none;
     border: none;
-    width: var(--size__06);
-    height: var(--size__06);
+    width: var(--size-06);
+    height: var(--size-06);
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    border-radius: var(--border-radius__02);
+    border-radius: var(--border-radius-02);
     cursor: pointer;
     transition: background-color 150ms ease, box-shadow 150ms ease;
     
@@ -30,8 +30,8 @@
 
 
 .xv-icon-button--small {
-  width: var(--size__04);
-  height: var(--size__04);
+  width: var(--size-04);
+  height: var(--size-04);
 
   & > svg {
     width: 16px;

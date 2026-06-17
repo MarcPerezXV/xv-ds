@@ -2,10 +2,10 @@
   background-color: transparent;
   outline: none;
   border: none;
-  padding-inline: var(--spacing__03);
-  height: var(--size__06);
+  padding-inline: var(--spacing-03);
+  height: var(--size-06);
   font: var(--text__body-medium);
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@
 }
 
 .xv-text-button__label {
-  padding-inline: var(--spacing__01);
+  padding-inline: var(--spacing-01);
 }
 
 .xv-text-button__slot {

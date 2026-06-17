@@ -1,6 +1,6 @@
 .xv-badge {
-    min-width: var(--size__04);
-    height: var(--size__04);
+    min-width: var(--size-04);
+    height: var(--size-04);
     background: linear-gradient(
         oklch(from var(--badge-color) l c h / 4%),
         oklch(from var(--badge-color) l c h / 4%)
@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--border-radius__01);
+    border-radius: var(--border-radius-01);
     font: var(--text__body-small__bold);
     color:  var(--color__text__base);
     position: relative;
@@ -20,11 +20,11 @@
 
 
 .xv-badge--count {
-    padding-inline: var(--spacing__02);
+    padding-inline: var(--spacing-02);
 }
 
 .xv-badge--icon {
-    width: var(--size__04);
+    width: var(--size-04);
 }
 
 .xv-badge--red-high {

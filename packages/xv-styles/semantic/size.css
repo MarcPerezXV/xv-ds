@@ -1,14 +1,14 @@
 :root {
 
-    --size__01: calc(var(--base-unit) * 3);
-    --size__02: calc(var(--base-unit) * 4);
-    --size__03: calc(var(--base-unit) * 5);
-    --size__04: calc(var(--base-unit) * 6);
-    --size__05: calc(var(--base-unit) * 7);
-    --size__06: calc(var(--base-unit) * 8);
-    --size__07: calc(var(--base-unit) * 9);
-    --size__08: calc(var(--base-unit) * 10);
-    --size__09: calc(var(--base-unit) * 12);
-    --size__10: calc(var(--base-unit) * 16);
+    --size-01: calc(var(--base-unit) * 3);
+    --size-02: calc(var(--base-unit) * 4);
+    --size-03: calc(var(--base-unit) * 5);
+    --size-04: calc(var(--base-unit) * 6);
+    --size-05: calc(var(--base-unit) * 7);
+    --size-06: calc(var(--base-unit) * 8);
+    --size-07: calc(var(--base-unit) * 9);
+    --size-08: calc(var(--base-unit) * 10);
+    --size-09: calc(var(--base-unit) * 12);
+    --size-10: calc(var(--base-unit) * 16);
 
 }

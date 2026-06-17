@@ -1,7 +1,7 @@
 .xv-switch {
   display: inline-flex;
   align-items: flex-start;
-  gap: var(--gap__02);
+  gap: var(--gap-02);
   cursor: pointer;
   font: var(--text__body-large);
  
@@ -16,10 +16,10 @@
 
 .xv-switch__control {
   position: relative;
-  width: var(--size__06);
-  height: var(--size__02);
+  width: var(--size-06);
+  height: var(--size-02);
   flex-shrink: 0;
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   background-color: var(--color__surface-layer-02);
   margin-top: 4px;
   transition: background-color 150ms ease, box-shadow 150ms ease;
@@ -29,9 +29,9 @@
 .xv-switch__control::after {
   content: "";
   position: absolute;
-  width: var(--size__02);
-  height: var(--size__02);
-  border-radius: var(--border-radius__full);
+  width: var(--size-02);
+  height: var(--size-02);
+  border-radius: var(--border-radius-full);
   background-color: var(--color__surface-layer-03);
   border: 1px solid var(--color__border__normal);
   transition: transform 150ms ease;

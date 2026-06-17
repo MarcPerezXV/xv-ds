@@ -36,7 +36,7 @@ export const Default: Story = {
     
     const panel = (
       <SidePanel {...args}>
-        <SidePanel.Header title="Frequently Asked Questions" />  
+        <SidePanel.Header title="SidePanel title" />  
 
         <SidePanel.Content className="xv-side-panel__storybook">
           Content goes here
@@ -56,7 +56,7 @@ export const Default: Story = {
             width: "100%",
             height: "100%",
             backgroundColor: "oklch(from var(--color__surface-layer-01) l c h / .04)",
-            borderRadius: "var(--border-radius__02)",
+            borderRadius: "var(--border-radius-02)",
 
           }}
         />

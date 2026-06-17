@@ -1,7 +1,7 @@
 .xv-radio {
   display: inline-flex;
   align-items: flex-start;
-  gap: var(--gap__02);
+  gap: var(--gap-02);
   cursor: pointer;
   font: var(--text__body-large);
 }
@@ -14,10 +14,10 @@
 
 .xv-radio__control {
   position: relative;
-  width: var(--size__02);
-  height: var(--size__02);
+  width: var(--size-02);
+  height: var(--size-02);
   flex-shrink: 0;
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   background-color: var(--color__background-04);
 
   transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
@@ -28,7 +28,7 @@
   content: "";
   position: absolute;
   inset: 5px;
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   background-color: transparent;
   transition: background-color 150ms ease;
 }
@@ -83,25 +83,25 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--gap__01);
+  gap: var(--gap-01);
 }
 
 .xv-radio-group__label {
   font: var(--text__body-large);
   color: var(--color__text__base);
-  margin-bottom: var(--gap__01);
+  margin-bottom: var(--gap-01);
 }
 
 .xv-radio-group__description {
   font: var(--text__body-medium);
   color: var(--color__text__brighter-01);
-  margin: 0 0 var(--gap__02);
+  margin: 0 0 var(--gap-02);
 }
 
 .xv-radio-group__options {
   display: flex;
   flex-direction: column;
-  gap: var(--gap__02);
+  gap: var(--gap-02);
 }
 
 .xv-radio-group__options--horizontal {

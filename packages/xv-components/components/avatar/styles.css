@@ -2,18 +2,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   background-color: var(--color__background-03);
   color: var(--color__text__brighter-01);
   flex-shrink: 0;
 }
 
 .xv-avatar--medium {
-  width: var(--size__06);
-  height: var(--size__06);
+  width: var(--size-06);
+  height: var(--size-06);
 }
 
 .xv-avatar--small {
-  width: var(--size__03);
-  height: var(--size__03);
+  width: var(--size-03);
+  height: var(--size-03);
 }
