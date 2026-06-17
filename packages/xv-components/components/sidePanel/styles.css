@@ -20,11 +20,11 @@
 
 .xv-side-panel__header {
     background-color: var(--color__background-02);
-    padding: var(--spacing__02);
-    padding-left: var(--spacing__04);
+    padding: var(--spacing-02);
+    padding-left: var(--spacing-04);
     font: var(--text__body-medium);
     border-bottom: 1px solid var(--color__border__subtle);
-    min-height: var(--size__08);
+    min-height: var(--size-08);
     display: flex;
     align-items: center;
     color: var(--color__text__brighter-01);
@@ -33,6 +33,7 @@
 .xv-side-panel__body {
     flex-basis: var(--flex-basis);
     flex-shrink: 0;
+    
 
     background-color: var(--color__background-01);
 
@@ -58,7 +59,7 @@
 }
 
 .xv-side-panel__closable-area {
-    padding: var(--spacing__02);
+    padding: var(--spacing-02);
     background-color: var(--color__background-01);
 }
 

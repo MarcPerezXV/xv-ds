@@ -1,7 +1,7 @@
 .xv-checkbox {
   display: inline-flex;
   align-items: flex-start;
-  gap: var(--gap__02);
+  gap: var(--gap-02);
   cursor: pointer;
   font: var(--text__body-large);
 }
@@ -14,8 +14,8 @@
 
 .xv-checkbox__control {
   position: relative;
-  width: var(--size__02);
-  height: var(--size__02);
+  width: var(--size-02);
+  height: var(--size-02);
   flex-shrink: 0;
 
   border-radius: var(--border-radius__01);

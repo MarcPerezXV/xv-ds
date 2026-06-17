@@ -1,7 +1,7 @@
 .xv-tabs {
   display: inline-flex;
   align-items: center;
-  gap: var(--gap__01);
+  gap: var(--gap-01);
 }
 
 .xv-tab {

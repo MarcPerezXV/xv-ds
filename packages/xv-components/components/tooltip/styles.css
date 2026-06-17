@@ -1,6 +1,6 @@
 .xv-tooltip {
-    padding-inline: var(--spacing__04);
-    padding-block: var(--spacing__02);
+    padding-inline: var(--spacing-04);
+    padding-block: var(--spacing-02);
     border-radius: var(--border-radius__02);
     background-color: var(--color__background-01__inverted);
     color: var(--color__text__base__inverted);

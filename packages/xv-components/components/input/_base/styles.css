@@ -3,7 +3,7 @@
   flex-direction: column;
   font: var(--text__body-large);
   color: var(--color__text-base);
-  gap: var(--gap__01);
+  gap: var(--gap-01);
   width: auto;
 }
 
@@ -24,8 +24,8 @@
   margin: 0;
   border: 1px solid transparent;
   font: var(--text__body-medium);
-  padding-block: var(--spacing__02);
-  padding-inline: var(--spacing__03);
+  padding-block: var(--spacing-02);
+  padding-inline: var(--spacing-03);
   border-radius: var(--border-radius__02);
   background-color: var(--color__background-04);
   transition: background-color 150ms ease, box-shadow 150ms ease,
@@ -46,11 +46,11 @@
 
 .xv-text-input__error {
   font: var(--text__body-medium);
-  padding: var(--spacing__01);
+  padding: var(--spacing-01);
   color: var(--color__text__danger);
   display: flex;
   align-items: center;
-  gap: var(--gap__01);
+  gap: var(--gap-01);
 
   &>svg {
     color: var(--color__system-feedback__red-medium);

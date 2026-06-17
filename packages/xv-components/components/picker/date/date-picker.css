@@ -6,13 +6,13 @@
   align-items: flex-start;
   justify-content: center;
   align-self: stretch;
-  padding: var(--spacing__03);
+  padding: var(--spacing-03);
 }
 
 .xv-date-picker__columns {
   display: flex;
   align-items: center;
-  gap: var(--gap__01);
+  gap: var(--gap-01);
   height: 100%;
   
 }
@@ -28,8 +28,8 @@
 .xv-date-picker__period {
   display: flex;
   flex-direction: column;
-  gap: var(--gap__01);
-  margin-left: var(--gap__01);
+  gap: var(--gap-01);
+  margin-left: var(--gap-01);
 }
 
 .xv-date-picker__period-button {
@@ -37,7 +37,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  padding: var(--spacing__02) var(--spacing__03);
+  padding: var(--spacing-02) var(--spacing-03);
   border-radius: var(--border-radius__02);
   font: var(--text__body-medium);
   color: var(--color__text__brighter-01);

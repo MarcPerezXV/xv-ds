@@ -9,11 +9,11 @@
 }
 
 .xv-avatar--medium {
-  width: var(--size__06);
-  height: var(--size__06);
+  width: var(--size-06);
+  height: var(--size-06);
 }
 
 .xv-avatar--small {
-  width: var(--size__03);
-  height: var(--size__03);
+  width: var(--size-03);
+  height: var(--size-03);
 }

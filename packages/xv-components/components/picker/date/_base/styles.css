@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--gap__01);
+  gap: var(--gap-01);
   min-width: 132px;
   width: clamp(8.25rem, 5.75rem + 12.5vw, 17rem);
   max-width: 100%;
@@ -13,7 +13,7 @@
 .xv-date-picker__info {
   display: flex;
   flex-direction: column;
-  gap: var(--gap__01);
+  gap: var(--gap-01);
 }
 
 .xv-date-picker__label {
@@ -43,7 +43,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding-left: var(--spacing__03);
+  padding-left: var(--spacing-03);
   padding-right: 56px;
   transition: background-color 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
 
@@ -102,11 +102,11 @@
 /* ── Error ── */
 .xv-date-picker__error {
   font: var(--text__body-medium);
-  padding: var(--spacing__01);
+  padding: var(--spacing-01);
   color: var(--color__text__danger);
   display: flex;
   align-items: center;
-  gap: var(--gap__01);
+  gap: var(--gap-01);
 
   & > svg {
     color: var(--color__system-feedback__red-medium);
@@ -130,11 +130,11 @@
 .xv-date-picker__presets {
   display: flex;
   flex-direction: column;
-  gap: var(--gap__01);
+  gap: var(--gap-01);
   list-style: none;
   margin: 0;
   min-width: 140px;
-  padding: var(--spacing__03);
+  padding: var(--spacing-03);
   border-right: 1px solid var(--color__border__subtle);
 }
 
@@ -145,7 +145,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  padding: var(--spacing__02) var(--spacing__03);
+  padding: var(--spacing-02) var(--spacing-03);
   border-radius: var(--border-radius__02);
   font: var(--text__body-medium);
   color: var(--color__text__brighter-01);
@@ -172,7 +172,7 @@
   --rdp-accent-background-color: var(--color__surface-layer-01);
   color: var(--color__text__base);
   margin: 0;
-  padding: var(--spacing__03);
+  padding: var(--spacing-03);
 }
 
 .xv-date-picker__popover .rdp-month_caption {
