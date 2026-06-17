@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--border-radius__01);
+    border-radius: var(--border-radius-01);
     font: var(--text__body-small__bold);
     color:  var(--color__text__base);
     position: relative;

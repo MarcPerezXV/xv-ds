@@ -6,7 +6,7 @@
 
 .xv-tab {
   --xv-tabs__tab-status-color: transparent;
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   appearance: none;
   border: none;
   background: transparent;
@@ -23,7 +23,7 @@
     content: "";
     position: absolute;
     height: 2px;
-    border-radius: var(--border-radius__full);
+    border-radius: var(--border-radius-full);
     width: 100%;
     background-color: var(--xv-tabs__tab-status-color);
     bottom: 0;

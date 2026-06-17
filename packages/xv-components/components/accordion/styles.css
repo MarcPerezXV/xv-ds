@@ -3,9 +3,9 @@
   flex-direction: column;
   width: 100%;
   font: var(--text__body-large);
-  border-radius: var(--border-radius__01);
+  border-radius: var(--border-radius-01);
   border: 1px solid var(--color__border__subtle);
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   overflow: hidden;
 }
 

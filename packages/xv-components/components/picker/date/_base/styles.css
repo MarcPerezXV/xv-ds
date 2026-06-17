@@ -37,7 +37,7 @@
   border: 1px solid transparent;
   width: 100%;
   min-height: 32px;
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   background-color: var(--color__background-04);
   font: var(--text__body-medium);
   display: flex;
@@ -121,7 +121,7 @@
   z-index: var(--xv__depth__full, 1000);
   background-color: var(--color__background-02);
   border: 1px solid var(--color__border__subtle);
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   box-shadow: 0 1px 2px var(--color__shadow-01), 0 8px 16px var(--color__shadow-02);
   overflow: hidden;
 }
@@ -146,7 +146,7 @@
   outline: none;
   cursor: pointer;
   padding: var(--spacing-02) var(--spacing-03);
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   font: var(--text__body-medium);
   color: var(--color__text__brighter-01);
   transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
@@ -194,7 +194,7 @@
 .xv-date-picker__popover .rdp-button_next {
   width: 24px;
   height: 24px;
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   outline: none;
   transition: background-color 150ms ease, box-shadow 150ms ease;
 
@@ -216,7 +216,7 @@
   width: 32px;
   height: 32px;
   font: var(--text__body-medium);
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   transition: background-color 150ms ease;
 
   &:hover:not(:disabled) {

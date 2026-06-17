@@ -38,7 +38,7 @@
   outline: none;
   cursor: pointer;
   padding: var(--spacing-02) var(--spacing-03);
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   font: var(--text__body-medium);
   color: var(--color__text__brighter-01);
   transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;

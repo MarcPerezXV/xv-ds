@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   background-color: var(--color__background-03);
   color: var(--color__text__brighter-01);
   flex-shrink: 0;

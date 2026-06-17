@@ -17,7 +17,7 @@
   width: var(--size-02);
   height: var(--size-02);
   flex-shrink: 0;
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   background-color: var(--color__background-04);
 
   transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
@@ -28,7 +28,7 @@
   content: "";
   position: absolute;
   inset: 5px;
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   background-color: transparent;
   transition: background-color 150ms ease;
 }

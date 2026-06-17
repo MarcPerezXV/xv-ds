@@ -2,7 +2,7 @@
   display: inline-flex;
   inline-size: 8px;
   block-size: 8px;
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   box-shadow: 0 0 0 1px var(--color__focus-ring__inner), 0 0 0 3px oklch(from var(--statusDot-color) l c h / .4);
   background-color: var(--statusDot-color);
 }

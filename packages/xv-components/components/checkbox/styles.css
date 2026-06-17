@@ -18,7 +18,7 @@
   height: var(--size-02);
   flex-shrink: 0;
 
-  border-radius: var(--border-radius__01);
+  border-radius: var(--border-radius-01);
   background-color: var(--color__background-04);
   transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
   margin-top: 4px;
@@ -28,7 +28,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: var(--border-radius__01);
+  border-radius: var(--border-radius-01);
   transition: background-color 150ms ease;
   background-repeat: no-repeat;
   background-position: center;

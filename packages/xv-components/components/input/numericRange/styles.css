@@ -37,7 +37,7 @@
   border: 1px solid transparent;
   width: 100%;
   min-height: 32px;
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   background-color: var(--color__background-04);
   font: var(--text__body-large);
   display: flex;
@@ -121,7 +121,7 @@
   z-index: var(--xv__depth__full, 1000);
   background-color: var(--color__background-02);
   border: 1px solid var(--color__border__subtle);
-  border-radius: var(--border-radius__02);
+  border-radius: var(--border-radius-02);
   box-shadow: 0 1px 2px var(--color__shadow-01), 0 8px 16px var(--color__shadow-02);
   padding: var(--spacing-03);
   display: flex;
@@ -168,14 +168,14 @@
   width: 100%;
   height: 4px;
   background-color: var(--color__surface-layer-03);
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
 }
 
 .xv-range-input__track-fill {
   position: absolute;
   height: 4px;
   background-color: var(--color__surface-layer-03);
-  border-radius: var(--border-radius__full);
+  border-radius: var(--border-radius-full);
   pointer-events: none;
 }
 
@@ -194,7 +194,7 @@
     appearance: none;
     width: 16px;
     height: 16px;
-    border-radius: var(--border-radius__full);
+    border-radius: var(--border-radius-full);
     background-color: var(--color__status__normal);
     border: 2px solid var(--color__background-02);
     pointer-events: all;
@@ -221,7 +221,7 @@
   &::-moz-range-thumb {
     width: 16px;
     height: 16px;
-    border-radius: var(--border-radius__full);
+    border-radius: var(--border-radius-full);
     background-color: var(--color__status__normal);
     border: 2px solid var(--color__background-02);
     pointer-events: all;

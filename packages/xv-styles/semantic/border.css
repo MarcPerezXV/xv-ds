@@ -1,13 +1,13 @@
 :root {
-    --border-radius__none: 0;
-    --border-radius__01: 2px;
-    --border-radius__02: var(--base-unit);
-    --border-radius__03: calc(var(--base-unit) * 2);
-    --border-radius__full: 999px;
+    --border-radius-none: 0;
+    --border-radius-01: 2px;
+    --border-radius-02: var(--base-unit);
+    --border-radius-03: calc(var(--base-unit) * 2);
+    --border-radius-full: 999px;
 
-    --border-stroke__none: 0;
-    --border-stroke__01: 1px;
-    --border-stroke__02: 2px;
+    --border-stroke-none: 0;
+    --border-stroke-01: 1px;
+    --border-stroke-02: 2px;
 
         
     --color__border__normal: light-dark(
