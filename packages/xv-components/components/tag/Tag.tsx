@@ -3,21 +3,21 @@ import { GhostIconButton } from "../button";
 import { useDSMessages } from "../../provider/DSContext";
 import "./styles.css";
 
-export type TagType = "yellow" | "blue" | "orange" | "green" | "red-high" | "red-med" | "red-low";
+export type TagTone = "yellow" | "blue" | "orange" | "green" | "red-high" | "red-med" | "red-low" | "gray";
 
 export interface TagProps {
   label: string;
-  type?: TagType;
+  tone?: TagTone;
   closable?: boolean;
   onClose?: () => void;
   className?: string;
 }
 
-export const Tag = ({ label, type, closable, onClose, className }: TagProps) => {
+export const Tag = ({ label, tone, closable, onClose, className }: TagProps) => {
   const messages = useDSMessages();
 
   return (
-    <span className={clsx("xv-tag", type && `xv-tag--${type}`, className)}>
+    <span className={clsx("xv-tag", tone && `xv-tag--${tone}`, className)}>
       <span className="xv-tag__label">{label}</span>
       {closable && (
         <GhostIconButton

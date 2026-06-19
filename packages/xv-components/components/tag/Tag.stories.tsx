@@ -11,7 +11,7 @@ const meta: Meta<typeof Tag> = {
       control: "text",
       description: "Tag label.",
     },
-    type: {
+    tone: {
       control: "radio",
       options: ["red-high", "red-med", "red-low", "yellow", "blue", "orange", "green", "gray"],
       description: "Visual style of the tag.",
@@ -32,8 +32,8 @@ type Story = StoryObj<typeof Tag>;
 
 export const Default: Story = {
   args: {
-    label: "Tag",
-    type: "blue",
+    label: "This is a tag",
+    tone: "gray",
      closable: false,
 
   },

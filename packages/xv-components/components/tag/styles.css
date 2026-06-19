@@ -2,14 +2,14 @@
   display: inline-flex;
   align-items: center;
   gap: var(--gap-01);
-  padding-left: var(--spacing-03);
+  padding-inline: var(--spacing-03);
   padding-right: var(--spacing-02);
   height: var(--size-06);
-  border-radius: var(--border-radius-ull);
-  background-color: oklch(from var(--tag-color) l c h / .24);
+  border-radius: var(--border-radius-02);
+  background-color: oklch(from var(--tag-color) l c h / .16);
   font: var(--text__body-medium);
   color: var(--color__text__base);
-  border: 1px solid oklch(from var(--tag-color) l c h / .40);
+  border: 1px solid oklch(from var(--tag-color) l c h / .24);
 }
 
 .xv-tag__label {
@@ -17,6 +17,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: var(--spacing-02);
+  
   
 }
 
