@@ -18,7 +18,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         className={className}
         trailingSlot={
           <GhostIconButton
-            icon={showPassword ? "eyeSlash" : "eye"}
+            icon={showPassword ? "eye-slash" : "eye"}
             altText={showPassword ? messages.hidePassword : messages.showPassword}
             description={showPassword ? messages.hidePassword : messages.showPassword}
             size="small"

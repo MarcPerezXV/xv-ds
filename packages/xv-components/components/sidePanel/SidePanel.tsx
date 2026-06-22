@@ -3,7 +3,7 @@ import { GhostIconButton } from "../button";
 import "./styles.css";
 import clsx from "clsx";
 import { useControllableState } from "../../hooks/use.controllableState";
-import { ClassNames } from "storybook/theming";
+
 
 export interface SidePanelProps {
     children: ReactNode;
@@ -98,7 +98,7 @@ export const SidePanel = (({
                     )}
                 >
                     <GhostIconButton
-                        icon="chevronLeft"
+                        icon="chevron-left"
                         altText="Toggle side panel"
                         size="small"
                         tooltipPosition={placement === "left" ? "right" : "left"}

@@ -188,7 +188,7 @@ export const DatePicker = ({
         )}
 
         <Icon
-          name="calendar"
+          name="calendar-days"
           size="small"
           className="xv-date-picker__calendar-icon"
         />

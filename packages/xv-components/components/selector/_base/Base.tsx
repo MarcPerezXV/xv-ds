@@ -114,7 +114,7 @@ export const BaseSelect = ({
         )}
 
         <Icon
-          name="chevronDown"
+          name="chevron-down"
           size="small"
           className={clsx(
             "xv-select__chevron",
@@ -125,7 +125,7 @@ export const BaseSelect = ({
 
       {error && (
         <div className="xv-select__error">
-          <Icon name="xMarkSquare" size="small" />
+          <Icon name="xmark-square" size="small" />
           {error}
         </div>
       )}

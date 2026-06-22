@@ -1,0 +1,11 @@
+.xv-icon {
+    --icon-stroke-width: 1.75;
+}
+
+.xv-icon-small {
+    --icon-stroke-width: 2;
+}
+
+.xv-icon-large {
+    --icon-stroke-width: 1.5;
+}

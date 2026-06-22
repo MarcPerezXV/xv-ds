@@ -3,7 +3,7 @@
   align-items: flex-start;
   gap: var(--gap-02);
   cursor: pointer;
-  font: var(--text__body-large);
+  font: var(--text__body-medium);
 }
 
 .xv-radio__input {
@@ -107,4 +107,5 @@
 .xv-radio-group__options--horizontal {
   flex-direction: row;
   flex-wrap: wrap;
+  gap: var(--gap-03);
 }
