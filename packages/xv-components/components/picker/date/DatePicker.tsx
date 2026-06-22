@@ -238,7 +238,7 @@ export const DatePicker = ({
             components={{
               Chevron: ({ orientation }) => (
                 <Icon
-                  name={orientation === "left" ? "chevronLeft" : "chevronRight"}
+                  name={orientation === "left" ? "chevron-left" : "chevron-right"}
                   size="small"
                 />
               ),
