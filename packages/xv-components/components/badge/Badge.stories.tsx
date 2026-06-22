@@ -32,7 +32,7 @@ type Story = StoryObj<typeof Badge>;
 export const WithIcon: Story = {
   args: {
     color: "red-high",
-    icon: "xMarkSquare",
+    icon: "xmark-square",
   },
 };
 

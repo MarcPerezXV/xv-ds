@@ -50,7 +50,9 @@ export const BaseDatePicker = ({
 
   return (
     <div className={clsx("xv-date-picker", className)} ref={wrapperRef}>
+      
       <div className="xv-date-picker__info">
+      
         <label className="xv-date-picker__label">{label}</label>
         {description && (
           <p id={descriptionId} className="xv-date-picker__description">
@@ -97,7 +99,7 @@ export const BaseDatePicker = ({
         )}
 
         <Icon
-          name="calendar"
+          name="calendar-days"
           size="small"
           className="xv-date-picker__calendar-icon"
         />
@@ -105,7 +107,7 @@ export const BaseDatePicker = ({
 
       {error && (
         <div id={errorId} className="xv-date-picker__error">
-          <Icon name="xMarkSquare" size="small" />
+          <Icon name="xmark-square" size="small" />
           {error}
         </div>
       )}

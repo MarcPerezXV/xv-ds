@@ -23,7 +23,7 @@ const useDialogContext = () => {
 const iconMap: Record<DialogType, string> = {
   informative: "infoSquare",
   warning: "warning",
-  error: "xMarkSquare",
+  error: "xmark-square",
 };
 
 const DialogHeader = ({ title }: { title: string }) => {

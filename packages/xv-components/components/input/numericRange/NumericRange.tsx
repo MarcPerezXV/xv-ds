@@ -123,7 +123,7 @@ export const NumericRangeInput = ({
 
       {error && (
         <div id={errorId} className="xv-range-input__error">
-          <Icon name="xMarkSquare" size="small" />
+          <Icon name="xmark-square" size="small" />
           {error}
         </div>
       )}

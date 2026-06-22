@@ -9,7 +9,7 @@ const meta: Meta<typeof OutlineIconButton> = {
   argTypes: {
     icon: {
       control: "select",
-      options: ["close", "trash", "chevronDown", "calendar", "clock"],
+      options: ["close", "trash", "chevron-down", "calendar-days", "clock"],
       description: "The icon to display.",
       table: { type: { summary: "IconName" } },
     },

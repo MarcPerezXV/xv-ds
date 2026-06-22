@@ -1,5 +1,5 @@
 .xv-side-panel {
-    --flex-basis: clamp(12.5rem, 8.649rem + 16.432vw, 23.438rem);
+    --flex-basis: clamp(12.5rem, 9.859rem + 11.268vw, 20rem);
     display: flex;
     font: var(--text__body-large);
     

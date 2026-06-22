@@ -7,6 +7,10 @@
   width: auto;
 }
 
+.xv-text-input__label {
+  font: var(--text__body-medium);
+}
+
 .xv-text-input__description {
   color: var(--color__text__brighter-01);
   font: var(--text__body-medium);
