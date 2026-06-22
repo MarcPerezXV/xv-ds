@@ -112,7 +112,7 @@ export const NumericRangeInput = ({
         )}
 
         <Icon
-          name="chevronDown"
+          name="chevron-down"
           size="small"
           className={clsx(
             "xv-range-input__chevron",

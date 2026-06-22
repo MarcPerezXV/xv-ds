@@ -8,8 +8,8 @@ const leadingSlotOptions = {
 };
 
 const trailingSlotOptions = {
-  icon: <Icon name="chevronDown" size="small" />,
-  statusDot: <StatusDot status="info" />,
+  icon: <Icon name="chevron-down" size="small" />,
+  statusDot: <StatusDot tone="blue" />,
 };
 
 const meta: Meta<typeof DangerButton> = {

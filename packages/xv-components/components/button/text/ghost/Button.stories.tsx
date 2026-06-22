@@ -8,7 +8,7 @@ const leadingSlotOptions = {
 };
 
 const trailingSlotOptions = {
-  icon: <Icon name="chevronDown" size="small" />,
+  icon: <Icon name="chevron-down" size="small" />,
   statusDot: <StatusDot status="danger" />,
 };
 

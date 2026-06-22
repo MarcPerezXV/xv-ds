@@ -52,7 +52,7 @@ const AccordionItem = ({ value, title, children, className }: AccordionItemProps
       >
         <span className="xv-accordion__title">{title}</span>
         <Icon
-          name="chevronDown"
+          name="chevron-down"
           size="small"
           className="xv-accordion__chevron"
         />
