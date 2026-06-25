@@ -1,13 +1,18 @@
 .xv-text-button.xv-text-button-primary {
-  background-color: var(--color__status__normal);
-  color: var(--color__text__over-color);
+
+  --btn-bg: var(--color__status__normal);
+  --btn-color: var(--color__text__over-color);
 
   &:hover:not(:disabled) {
-    background-color: var(--color__status__hover);
+
+    --btn-bg: var(--color__status__hover);
+    
   }
 
   &:disabled {
-    background-color: var(--color__status__disabled);
-    color: var(--color__text__brighter-02);
+
+    --btn-bg: var(--color__status__disabled);
+    --btn-color: var(--color__text__brighter-02);
+
   }
 }

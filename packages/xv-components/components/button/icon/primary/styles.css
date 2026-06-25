@@ -1,13 +1,13 @@
 .xv-icon-button.xv-icon-button-primary {
-    background-color: var(--color__status__normal);
-    color: var(--color__text__over-color);
+    --iconbtn-bg: var(--color__status__normal);
+    --iconbtn-color: var(--color__text__over-color);
 
     &:hover {
-        background-color: var(--color__status__hover);
+        --iconbtn-bg: var(--color__status__hover);
     }
 
     &:disabled {
-        background-color: var(--color__status__disabled);
-        color: var(--color__text__brighter-02);
+        --iconbtn-bg: var(--color__status__disabled);
+        --iconbtn-color: var(--color__text__brighter-02);
     }
 }

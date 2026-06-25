@@ -1,7 +1,13 @@
 .xv-icon-button {
-    background-color: transparent;
+
+  --iconbtn-bg: transparent;
+  --iconbtn-color: transparent;
+  --iconbtn-border: transparent;
+
+    background-color: var(--iconbtn-bg);
     outline: none;
-    border: none;
+    border: 1px solid var(--iconbtn-border);
+    color: var(--iconbtn-color);
     width: var(--size-06);
     height: var(--size-06);
     display: inline-flex;
