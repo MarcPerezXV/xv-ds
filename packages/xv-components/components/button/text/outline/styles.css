@@ -1,0 +1,33 @@
+.xv-text-button.xv-text-button-outline {
+
+    --btn-border: var(--color__border__normal);
+    --btn-bg: transparent;
+    --btn-color: var(--color__text__base);
+
+ 
+
+  &:hover:not(:disabled) {
+    
+    --btn-bg: var(--color__surface-layer-01);
+    --btn-border: var(--color__border__hover);
+    
+  }
+
+  &:disabled {
+
+    --btn-bg: transparent;
+    --btn-color: var(--color__text__brighter-02);
+    --btn-border: var(--color__border__disabled);
+  }
+
+  &.xv-text-button-outline--active {
+    
+    --btn-bg: var(--color__surface-layer-02);
+    --btn-border: var(--color__border__active);
+  }
+
+  &.xv-text-button-outline--active:hover {
+   
+    --btn-bg: var(--color__surface-layer-03);
+  }
+}

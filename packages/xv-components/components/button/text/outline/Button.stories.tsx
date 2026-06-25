@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { GhostButton } from "./Button";
+import { OutlineButton } from "./Button";
 import { Icon } from "../../../icon";
 import { StatusDot } from "../../../statusDot/StatusDot";
 
@@ -13,9 +13,9 @@ const trailingSlotOptions = {
 };
 
 
-const meta: Meta<typeof GhostButton> = {
-  title: "Components/Button/Text/Ghost",
-  component: GhostButton,
+const meta: Meta<typeof OutlineButton> = {
+  title: "Components/Button/Text/Outline",
+  component: OutlineButton,
   tags: ["autodocs"],
   parameters: {layout: "centered"},
   argTypes: {
@@ -55,7 +55,7 @@ const meta: Meta<typeof GhostButton> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof GhostButton>;
+type Story = StoryObj<typeof OutlineButton>;
 
 export const Default: Story = {
   args: {

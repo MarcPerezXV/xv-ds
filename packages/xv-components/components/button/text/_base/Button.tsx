@@ -46,13 +46,13 @@ export const BaseButton = forwardRef<
         {...buttonProps}
       >
         {leadingSlot && (
-          <div className="xv-text-button__slot">{leadingSlot}</div>
+          <div className="xv-text-button__slot leading">{leadingSlot}</div>
         )}
 
         <span className="xv-text-button__label">{label}</span>
 
         {trailingSlot && (
-          <div className="xv-text-button__slot">{trailingSlot}</div>
+          <div className="xv-text-button__slot trailing">{trailingSlot}</div>
         )}
       </button>
     );

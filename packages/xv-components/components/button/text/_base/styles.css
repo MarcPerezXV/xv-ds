@@ -1,8 +1,15 @@
 .xv-text-button {
-  background-color: transparent;
+
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-color: var(--color__text__over-color);
+
+  background-color: var(--btn-bg);
   outline: none;
-  border: none;
+  border: 1px solid var(--btn-border);
+  color: var(--btn-color);
   padding-inline: var(--spacing-03);
+  gap: var(--gap-02);
   height: var(--size-06);
   font: var(--text__body-medium);
   border-radius: var(--border-radius-02);
@@ -21,14 +28,13 @@
   }
 }
 
-.xv-text-button__label {
-  padding-inline: var(--spacing-01);
-}
 
 .xv-text-button__slot {
-  width: 24px;
-  height: 24px;
+
+  min-width: var(--size-02);
   display: flex;
   align-items: center;
   justify-content: center;
+
+ 
 }
